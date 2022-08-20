@@ -5,17 +5,20 @@ class Applications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-      appBar: AppBar(),
+    return Scaffold(
+      backgroundColor: const Color(0xFF6E6E6D),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF6E6E6D),
+      ),
       body: SafeArea(
-        child: ListView(
-          children: [
-            Container(
-              width: 100,
-              height: 200,
-              color: Colors.red,
-            )
-          ],
+          child: ListView(
+        children: [
+          Container(
+            width: 100,
+            height: 200,
+            // color: Colors.red,
+          )
+        ],
       )),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({Key? key}) : super(key: key);
 
@@ -9,12 +10,9 @@ class ProfileDetails extends StatelessWidget {
         Center(
           child: Container(
             decoration: BoxDecoration(
-              boxShadow: const [
-                BoxShadow(offset: Offset(9, 9), blurRadius: 10),
-              ],
-              borderRadius: BorderRadius.circular(20),
-              color: const Color.fromARGB(255, 117, 114, 113),
-            ),
+                borderRadius: BorderRadius.circular(20),
+                  color:const Color(0xFFFAD0C9),
+               ),
             width: MediaQuery.of(context).size.width * 0.9,
             height: MediaQuery.of(context).size.height * 0.14,
             child: Column(
@@ -24,16 +22,18 @@ class ProfileDetails extends StatelessWidget {
                     Text(
                       '  education and experience'.toUpperCase(),
                       style: const TextStyle(
-                          fontSize: 20, fontWeight: FontWeight.bold),
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.04,
+                      width: MediaQuery.of(context).size.width * 0.01,
                     ),
                     IconButton(
                         onPressed: () {},
                         icon: const Icon(
                           Icons.edit_calendar_sharp,
-                          color: Colors.white,
+                          color: Colors.black,
                         )),
                   ],
                 ),
@@ -55,12 +55,9 @@ class ProfileDetails extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.9,
           height: MediaQuery.of(context).size.height * 0.14,
           decoration: BoxDecoration(
-            boxShadow: const [
-              BoxShadow(offset: Offset(9, 9), blurRadius: 10),
-            ],
-            borderRadius: BorderRadius.circular(10),
-           color: const Color.fromARGB(255, 117, 114, 113),
-          ),
+              borderRadius: BorderRadius.circular(10),
+                color: const Color(0xFFFAD0C9),
+              ),
           child: Row(
             children: [
               Row(
@@ -89,19 +86,21 @@ class ProfileDetails extends StatelessWidget {
                     child: Container(
                       width: MediaQuery.of(context).size.width * 0.23,
                       height: MediaQuery.of(context).size.height * 0.07,
-                      color: const Color.fromARGB(255, 117, 114, 113),
+                        color:const Color(0xFFFAD0C9),
                       child: Column(children: [
                         SizedBox(
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         const Icon(
                           Icons.upload_file_outlined,
-                          color: Colors.white,
+                          color: Colors.black,
                         ),
                         const Text(
                           'Press to add',
                           style: TextStyle(
-                              fontWeight: FontWeight.w900, fontSize: 13,color: Colors.white),
+                              fontWeight: FontWeight.w900,
+                              fontSize: 13,
+                              color: Colors.black),
                         )
                       ]),
                     ),

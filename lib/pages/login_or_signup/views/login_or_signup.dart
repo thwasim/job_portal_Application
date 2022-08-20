@@ -33,7 +33,7 @@ class Login_or_signup extends StatelessWidget {
               child: Material(
                 elevation: 5,
                 borderRadius: BorderRadius.circular(50),
-                color: Colors.cyan,
+                color: const Color(0xFFFAD0C9),
                 child: MaterialButton(
                   padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                   minWidth: MediaQuery.of(context).size.width,
@@ -65,7 +65,7 @@ class Login_or_signup extends StatelessWidget {
               child: Material(
                 elevation: 5,
                 borderRadius: BorderRadius.circular(50),
-                color: Colors.cyan,
+                color:const Color(0xFFFAD0C9),
                 child: MaterialButton(
                   padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                   minWidth: MediaQuery.of(context).size.width,

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:second_project/pages/introduction/models/introdutionmodel.dart';
-import 'package:second_project/pages/login_or_signup/views/login_or_signup.dart';
+import 'package:second_project/pages/login_page/views/login_page.dart';
 
 class Introductioncontroller extends GetxController {
   Rx selectedpageindex = 0.obs;
@@ -10,7 +10,7 @@ class Introductioncontroller extends GetxController {
 
   forwardAction() {
     if(islastpage){
-      Get.off(const Login_or_signup());
+      Get.off( Signupscreen());
     }else{
       pagecontroller.nextPage(duration: 300.milliseconds, curve: Curves.ease);
     }

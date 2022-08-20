@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:second_project/pages/introduction/views/introduction.dart';
 
 class Splahcontroller extends GetxController {
-  
   @override
   void onInit() {
     gohome();
@@ -11,6 +10,6 @@ class Splahcontroller extends GetxController {
 
   Future<void> gohome() async {
     await Future.delayed(const Duration(seconds: 4));
-    Get.off( Introdutionscreen());
+    Get.off(Introdutionscreen());
   }
 }
