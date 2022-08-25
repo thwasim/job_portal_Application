@@ -31,6 +31,7 @@ dependencies:
   flashy_tab_bar2: ^0.0.4
   flutter:
     sdk: flutter
+  im_stepper: ^1.0.1+1
   provider: ^6.0.3
   status_change: ^2.0.0
 

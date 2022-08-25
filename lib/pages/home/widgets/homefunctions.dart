@@ -23,17 +23,15 @@ class Cardinside extends StatelessWidget {
               '   Flutter Developer',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
+            
             SizedBox(
-              width: MediaQuery.of(context).size.width * 0.17,
+              width: MediaQuery.of(context).size.width * 0.13,
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.12,
-              height: MediaQuery.of(context).size.height * 0.02,
-              child: const Text(
+            const Text(
                 '2 days',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
-            ),
+           
           ],
         ),
         const Padding(
@@ -78,8 +76,7 @@ class Cardinside extends StatelessWidget {
                   primary:  Colors.white,
                 ),
                 onPressed: () {
-                  // Get.to(const JobDetails());
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>JobDetails()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const JobDetails()));
                 },
                 child: Text('details'.toUpperCase(),style: const TextStyle(color: Colors.black),),
               )

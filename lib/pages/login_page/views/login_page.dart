@@ -53,7 +53,7 @@ class Signupscreen extends StatelessWidget {
                           if (formKey.currentState!.validate()) {
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                builder: (ctx) => Bottom_nav(),
+                                builder: (ctx) =>const Bottom_nav(),
                               ),
                             );
                           }

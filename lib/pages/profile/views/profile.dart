@@ -26,7 +26,6 @@ class Profile extends StatelessWidget {
                 child: Container(
                   alignment: const Alignment(0.0, 2.8),
                   child: Stack(
-                    // alignment: Alignment.bottomRight,
                     children: const [
                       CircleAvatar(
                         backgroundColor: Colors.white,
@@ -46,7 +45,7 @@ class Profile extends StatelessWidget {
               child: TextButton.icon(
                   onPressed: () {
                     Navigator.of(context).push(
-                        MaterialPageRoute(builder: (ctx) => ProfileEdit()));
+                        MaterialPageRoute(builder: (ctx) => const ProfileEdit()));
                   },
                   icon: const Icon(
                     Icons.edit_calendar_sharp,

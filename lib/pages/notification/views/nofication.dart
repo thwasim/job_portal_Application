@@ -6,9 +6,9 @@ class Notifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color(0xFF6E6E6D),
+      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
       appBar: AppBar(
-        backgroundColor:const Color(0xFF6E6E6D),
+       backgroundColor: const Color.fromARGB(255, 239, 206, 108),
         centerTitle: true,
         title: const Text(
           'Notification',
@@ -16,54 +16,58 @@ class Notifications extends StatelessWidget {
           textAlign: TextAlign.end,
         ),
       ),
-      body: ListView.builder(
-          physics: const BouncingScrollPhysics(),
-          padding: EdgeInsets.zero,
-          itemCount: 2,
-          itemBuilder: (BuildContext context, int index) {
-            return Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 30,
-                    child: Image.asset(
-                      "assets/circle-profile.png",
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            padding: EdgeInsets.zero,
+            itemCount: 3,
+            itemBuilder: (BuildContext context, int index) {
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 30,
+                      child: Image.asset(
+                        "assets/pro.jpg",
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.12,
-                  width: 310,
-                  child: Card(
-                    shadowColor: Colors.black,
-                    elevation: 10,
-                    color:const Color(0xFFFAD0C9),
-                    shape: const RoundedRectangleBorder(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30.0),
-                            topRight: Radius.circular(30.0),
-                            bottomLeft: Radius.circular(30.0),
-                            bottomRight: Radius.circular(30.0))),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Padding(
-                          padding: EdgeInsets.only(right: 3, left: 3),
-                          child: Text(
-                            'You have selected to google company to Access the chat',
-                            style: TextStyle(
-                                fontSize: 17, fontWeight: FontWeight.bold),
-                          ),
-                        )
-                      ],
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.121,
+                    width: MediaQuery.of(context).size.width * 0.76,
+                    child: Card(
+                      shadowColor: Colors.black,
+                      elevation: 10,
+                      color: Colors.white,
+                      shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(30.0),
+                              topRight: Radius.circular(30.0),
+                              bottomLeft: Radius.circular(30.0),
+                              bottomRight: Radius.circular(30.0))),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Padding(
+                            padding: EdgeInsets.only(right: 3, left: 3),
+                            child: Text(
+                              'You have selected to google company to Access the chat',
+                              style: TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.bold),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
-                ),
-              ],
-            );
-          }),
+                ],
+              );
+            }),
+      ),
     );
   }
 }

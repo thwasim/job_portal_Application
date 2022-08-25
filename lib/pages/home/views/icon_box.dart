@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/views/constant.dart';
 
 class IconBox extends StatelessWidget {
   const IconBox(
@@ -7,16 +6,15 @@ class IconBox extends StatelessWidget {
       this.height = 65,
       this.width = 65,
       this.radius = 20,
-      this.color = kPrimaryLightColor,
       this.icon,
       this.iconColor = Colors.white})
       : super(key: key);
   final double height;
   final double width;
   final double radius;
-  final Color color;
   final IconData? icon;
   final Color iconColor;
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class IconBox extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: color,
+        color:const Color(0xff23232c),
         borderRadius: BorderRadius.circular(radius),
       ),
       child: Icon(

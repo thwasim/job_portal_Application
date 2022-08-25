@@ -1,8 +1,5 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/views/categary.dart';
-import 'package:second_project/pages/home/views/constant.dart';
 import 'package:second_project/pages/home/views/icon_box.dart';
 
 searchForJobs(Size size) {
@@ -10,7 +7,7 @@ searchForJobs(Size size) {
     width: size.width,
     height: 65,
     decoration: BoxDecoration(
-       color: Colors.white,
+      color: Colors.white,
       borderRadius: BorderRadius.circular(15),
     ),
     child: Row(
@@ -25,7 +22,7 @@ searchForJobs(Size size) {
         Expanded(
           child: SizedBox(
             child: TextFormField(
-              style: const TextStyle(color: Colors.white),
+              style: const TextStyle(color: Colors.black),
               cursorColor: Colors.white,
               decoration: const InputDecoration(
                   fillColor: Colors.white,
@@ -37,71 +34,9 @@ searchForJobs(Size size) {
         ),
         const Padding(
           padding: EdgeInsets.only(right: 10),
-          child: IconBox(
-              width: 55, height: 50, icon: Icons.line_style_rounded),
+          child: IconBox(width: 55, height: 50, icon: Icons.line_style_rounded),
         ),
       ],
     ),
-  );
-}
-
-jobCategory() {
-  return Row(
-    children: const [
-      Expanded(
-        flex: 1,
-        child: CategoryBox(
-          boxColor: kYellowColor,
-          title: 'Desing',
-          subTitle: '3.2k Jobs',
-          iconBox: IconBox(
-            height: 40,
-            width: 40,
-            radius: 10,
-            color: Colors.white,
-            icon: CupertinoIcons.wand_stars_inverse,
-            iconColor: kPrimaryLightColor,
-          ),
-        ),
-      ),
-      SizedBox(
-        width: 5,
-      ),
-      Expanded(
-        flex: 1,
-        child: CategoryBox(
-          boxColor: kPinkColor,
-          title: 'Network',
-          subTitle: '2.8k Jobs',
-          iconBox: IconBox(
-            height: 40,
-            width: 40,
-            radius: 10,
-            color: Colors.white,
-            icon: CupertinoIcons.flowchart_fill,
-            iconColor: kPrimaryLightColor,
-          ),
-        ),
-      ),
-      SizedBox(
-        width: 5,
-      ),
-      Expanded(
-        flex: 1,
-        child: CategoryBox(
-          boxColor: kYellowColor,
-          title: 'Security',
-          subTitle: '4.3k Jobs',
-          iconBox: IconBox(
-            height: 40,
-            width: 40,
-            radius: 10,
-            color: Colors.white,
-            icon: CupertinoIcons.checkmark_shield_fill,
-            iconColor: kPrimaryLightColor,
-          ),
-        ),
-      ),
-    ],
   );
 }

@@ -5,6 +5,6 @@ class Splahprovider with ChangeNotifier {
 
   Future<void> gohome(context) async {
     await Future.delayed(const Duration(seconds: 4));
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>Introdutionscreen()));
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const Introdutionscreen()));
   }
 }

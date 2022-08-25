@@ -94,6 +94,7 @@ class JobDetails extends StatelessWidget {
                     color: Theme.of(context).colorScheme.secondary,
                   ),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children:  [
                      const Text(
                         "APPLY",
@@ -104,11 +105,11 @@ class JobDetails extends StatelessWidget {
                         ),
                       ),
                       SizedBox(width: MediaQuery.of(context).size.width*0.16),
-                     const Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Colors.white,
-                        size: 28.0,
-                      ),
+                    //  const Icon(
+                    //     Icons.keyboard_arrow_right,
+                    //     color: Colors.white,
+                    //     size: 28.0,
+                    //   ),
                     ],
                   ),
                 ),

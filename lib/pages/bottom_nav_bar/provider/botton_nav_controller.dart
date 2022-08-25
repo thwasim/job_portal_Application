@@ -14,10 +14,10 @@ class Bottomprovider with ChangeNotifier {
   }
 
   List<Widget> tabItems = [
-    HomePage(),
-    Applications(),
-    Notifications(),
-    Profile(),
+   const HomePage(),
+   const Application(),
+   const Notifications(),
+   const Profile(),
   ];
 
 

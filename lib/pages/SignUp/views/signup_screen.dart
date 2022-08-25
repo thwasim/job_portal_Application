@@ -86,7 +86,7 @@ class SignUp extends StatelessWidget {
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (ctx) => Bottom_nav()));
+                                builder: (ctx) =>const Bottom_nav()));
                           }
                         },
                         child: const Text('Sign Up',
