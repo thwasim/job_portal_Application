@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/views/home_page.dart';
-import 'package:second_project/pages/profile/views/profileadress.dart';
+import 'package:second_project/pages/profile/model/profileadress.dart';
 import 'package:second_project/pages/profile/views/profiledetials.dart';
-import 'package:get/get.dart';
+import 'package:second_project/pages/profileedit/view/edit.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}) : super(key: key);
@@ -10,7 +9,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF6E6E6D),
+      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -28,73 +27,74 @@ class Profile extends StatelessWidget {
                   alignment: const Alignment(0.0, 2.8),
                   child: Stack(
                     // alignment: Alignment.bottomRight,
-                    children: [
+                    children: const [
                       CircleAvatar(
                         backgroundColor: Colors.white,
                         backgroundImage:
-                            const AssetImage("assets/circle-profile.png"),
+                            AssetImage("assets/pro.jpg"),
                         radius: 70,
                       ),
-                      Positioned(
-                        // top: 80,
-                        // left: 100,
-                        child: IconButton(
-                            onPressed: () {
-                              showBottom(context);
-                            },
-                            icon: const Icon(
-                              Icons.add_photo_alternate_rounded,
-                              color: Colors.black,
-                              size: 40,
-                            )),
-                      )
                     ],
                   ),
                 ),
               ),
             ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width * .7,
+                  top: MediaQuery.of(context).size.height * .01),
+              child: TextButton.icon(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (ctx) => ProfileEdit()));
+                  },
+                  icon: const Icon(
+                    Icons.edit_calendar_sharp,
+                    color: Colors.red,
+                  ),
+                  label: const Text(
+                    'edit profile',
+                    style: TextStyle(color: Colors.red),
+                  )),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.02,
+            ),
+            const Text(
+              'Flutter developer',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
             Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 SingleChildScrollView(
                   child: Container(
                     width: MediaQuery.of(context).size.width * 0.9,
-                    height: MediaQuery.of(context).size.width * 0.6,
+                    height: MediaQuery.of(context).size.width * 0.5,
                     decoration: BoxDecoration(
+                        border: Border.all(),
+                        boxShadow: const [
+                          BoxShadow(
+                              offset: Offset(4, 4),
+                              color: Color.fromARGB(255, 101, 97, 97))
+                        ],
                         borderRadius: BorderRadius.circular(26),
-                        color: const Color(0xFFFAD0C9)),
+                        color: Colors.white),
                     child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            IconButton(
-                                onPressed: () {},
-                                icon: const Icon(
-                                  Icons.edit,
-                                  color: Colors.black,
-                                )),
-                          ],
-                        ),
-                        const KeyValue(
-                            name: 'Basith Usman',
-                            title: 'Name:                  '),
-                        const KeyValue(
-                            name: 'Basi@gmail.com',
-                            title: 'Email:             '),
-                        const KeyValue(
-                            name: 'kochi           ',
-                            title: 'Location:                 '),
-                        const KeyValue(
-                            name: '+91 9876543456', title: 'Number:       '),
+                      children: const [
+                        KeyValue(name: 'Basith Usman', title: 'Name       :'),
+                        KeyValue(
+                            name: 'Basi@gmail.com', title: 'Email        :'),
+                        KeyValue(name: 'kochi', title: 'Location  :'),
+                        KeyValue(name: '+91 9876543456', title: 'Number   :'),
                       ],
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 const ProfileDetails(),
               ],
@@ -102,66 +102,6 @@ class Profile extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  Future<void> showBottom(BuildContext context) async {
-    showModalBottomSheet(
-      backgroundColor: Colors.transparent,
-      context: context,
-      builder: (ctx) {
-        return Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(70)),
-              color: Color(0xFFFAD0C9),
-            ),
-            width: double.infinity,
-            height: 200,
-            child: Column(children: [
-              const SizedBox(
-                height: 20,
-              ),
-              const Text(
-                'Choice Profile Photo',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(35.0),
-                child: Row(
-                  children: [
-                    TextButton.icon(
-                      onPressed: () {},
-                      icon: const Icon(Icons.camera, color: Colors.black),
-                      label: const Text(
-                        'Camera',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 70,
-                    ),
-                    TextButton.icon(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.image,
-                          color: Colors.black,
-                        ),
-                        label: const Text(
-                          'Gallery',
-                          style: TextStyle(color: Colors.white),
-                        )),
-                  ],
-                ),
-              ),
-            ]),
-          ),
-        );
-      },
     );
   }
 }

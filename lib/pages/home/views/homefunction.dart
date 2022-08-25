@@ -1,7 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/views/categorybox.dart';
+import 'package:second_project/pages/home/views/categary.dart';
 import 'package:second_project/pages/home/views/constant.dart';
 import 'package:second_project/pages/home/views/icon_box.dart';
 
@@ -10,7 +10,7 @@ searchForJobs(Size size) {
     width: size.width,
     height: 65,
     decoration: BoxDecoration(
-       color:const Color(0xFFfbc7d4),
+       color: Colors.white,
       borderRadius: BorderRadius.circular(15),
     ),
     child: Row(

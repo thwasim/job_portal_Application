@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:second_project/pages/home/descreption/descreption.dart';
 
 class Cardinside extends StatelessWidget {
@@ -16,8 +15,8 @@ class Cardinside extends StatelessWidget {
               child: CircleAvatar(
                 radius: 30,
                 backgroundColor: Colors.white,
-                child: Image.network(
-                    'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png'),
+                child: Image.asset(
+                    'assets/google.png'),
               ),
             ),
             const Text(
@@ -27,12 +26,11 @@ class Cardinside extends StatelessWidget {
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.17,
             ),
-            Container(
-              width: MediaQuery.of(context).size.width * 0.15,
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.12,
               height: MediaQuery.of(context).size.height * 0.02,
-              color: const Color(0xFF9796f0),
               child: const Text(
-                '  2 days',
+                '2 days',
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
             ),
@@ -48,16 +46,18 @@ class Cardinside extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: const [
-              Text('Min. Experience',
+            children: [
+              const Text('Min. Experience',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )),
-              Text('9 - 10 lack',
+              SizedBox(
+                width: MediaQuery.of(context).size.width * 0.28,
+              ),
+              const Text('9 - 10 lack',
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   )),
             ],
@@ -70,17 +70,18 @@ class Cardinside extends StatelessWidget {
             children: [
               const Text('1 year',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.red)),
+                      color: Colors.black)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: const Color(0xFF9796f0),
+                  primary:  Colors.white,
                 ),
                 onPressed: () {
-                  Get.to(const JobDetail());
+                  // Get.to(const JobDetails());
+                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>JobDetails()));
                 },
-                child: Text('details'.toUpperCase()),
+                child: Text('details'.toUpperCase(),style: const TextStyle(color: Colors.black),),
               )
             ],
           ),

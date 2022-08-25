@@ -10,7 +10,7 @@ class KeyValue extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title,
               style: const TextStyle(
@@ -21,7 +21,7 @@ class KeyValue extends StatelessWidget {
           Text(name,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 23,
+                fontSize: 18,
                 color: Colors.black,
               )),
         ],

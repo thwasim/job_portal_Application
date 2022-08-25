@@ -55,12 +55,15 @@ class CategoryBox extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const CustomButton(
-              text:'View Jobs',
-              width:double.infinity,
-              radius:5,
+            CustomButton(
+              ontap: () {
+                // Get.to(Profile());
+              },
+              text: 'View Jobs',
+              width: double.infinity,
+              radius: 5,
             ),
-             const SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],

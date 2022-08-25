@@ -1,15 +1,10 @@
-import 'package:get/get.dart';
+import 'package:flutter/material.dart';
 import 'package:second_project/pages/introduction/views/introduction.dart';
 
-class Splahcontroller extends GetxController {
-  @override
-  void onInit() {
-    gohome();
-    super.onInit();
-  }
+class Splahprovider with ChangeNotifier {
 
-  Future<void> gohome() async {
+  Future<void> gohome(context) async {
     await Future.delayed(const Duration(seconds: 4));
-    Get.off(Introdutionscreen());
+    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>Introdutionscreen()));
   }
 }

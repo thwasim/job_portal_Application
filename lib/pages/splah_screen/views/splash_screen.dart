@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:provider/provider.dart';
 import 'package:second_project/pages/splah_screen/controller/splah_controller.dart';
 
 class Screensplash extends StatelessWidget {
   Screensplash({Key? key}) : super(key: key);
 
-  final Splahcontroller controller = Get.put(Splahcontroller());
+  // final Splahcontroller controller = Get.put(Splahcontroller());
 
   @override
   Widget build(BuildContext context) {
+    context.read<Splahprovider>().gohome(context);
     return Scaffold(
-      body: GetBuilder<Splahcontroller>(
-      builder: (controller) {
-      return Container(
+      body:  Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topRight,
@@ -34,7 +33,7 @@ class Screensplash extends StatelessWidget {
                     ),
                   ),
                 ))),
-      );
-    }));
+      ),
+    );
   }
 }

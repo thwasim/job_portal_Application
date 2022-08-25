@@ -10,58 +10,47 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-        backgroundColor: const Color(0xFF6E6E6D),
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-         backgroundColor: const Color(0xFF6E6E6D),
-        ),
-        body: SizedBox(
-          width: size.width,
-          height: size.height,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Container(
-              //   width: double.infinity,
-              //   height: 50,
-              //   color: Colors.white,
-              //   ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10, left: 30, right: 30),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(bottom: 20, top: 10),
-                      child: Text(
-                        'Find the World\'s most Amazing Job',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 30,
-                            fontWeight: FontWeight.w600),
+        backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20, left: 30, right: 30),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 20, top: 10),
+                        child: Text(
+                          'Find the World\'s most Amazing Job',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 30,
+                              fontWeight: FontWeight.w600),
+                        ),
                       ),
-                    ),
-                    searchForJobs(size),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.03,
-                    ),
-                  ],
+                      searchForJobs(size),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.01,
+                      ),
+                      // jobCategory(),
+                    ],
+                  ),
                 ),
-              ),
-              Expanded(
-                child: SizedBox(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: ListView.builder(
-                      physics: const BouncingScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
                       padding: EdgeInsets.zero,
                       dragStartBehavior: DragStartBehavior.start,
                       itemCount: 5,
                       itemBuilder: (BuildContext context, int index) {
                         return SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.27,
+                          height: MediaQuery.of(context).size.height * 0.245,
                           child: Card(
-                            color:const Color(0xFFFAD0C9),
+                            // color:const Color(0xFFFAD0C9),
                             shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(30.0),
@@ -77,8 +66,8 @@ class HomePage extends StatelessWidget {
                         );
                       }),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ));
   }

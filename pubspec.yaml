@@ -31,8 +31,7 @@ dependencies:
   flashy_tab_bar2: ^0.0.4
   flutter:
     sdk: flutter
-  get: ^4.6.5
-  # onboarding: ^3.1.0
+  provider: ^6.0.3
   status_change: ^2.0.0
 
 dev_dependencies:

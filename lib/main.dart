@@ -1,9 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:second_project/pages/splah_screen/widget/splash_screen.dart';
+import 'package:provider/provider.dart';
+import 'package:second_project/pages/SignUp/provider/signpageprovider.dart';
+import 'package:second_project/pages/bottom_nav_bar/provider/botton_nav_controller.dart';
+import 'package:second_project/pages/introduction/provider/introdutioncontroller.dart';
+import 'package:second_project/pages/login_page/provider/logincontroller.dart';
+import 'package:second_project/pages/splah_screen/controller/splah_controller.dart';
+import 'package:second_project/pages/splah_screen/views/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_)=>Introductionprovider()),
+      ChangeNotifierProvider(create: (_)=>Splahprovider()),
+      ChangeNotifierProvider(create: (_)=>Bottomprovider()),
+      ChangeNotifierProvider(create: (_)=>Loginprovider()),
+      ChangeNotifierProvider(create: (_)=>Signupprovider()),
+    ],
+    child: const MyApp(),
+    ),
+  );
+
 }
 
 class MyApp extends StatelessWidget {
@@ -12,7 +28,7 @@ class MyApp extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner:false ,
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -21,5 +37,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-

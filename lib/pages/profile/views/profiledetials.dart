@@ -7,57 +7,46 @@ class ProfileDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const Text(
+          'Education and Experience',
+          style: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+        ),
         Center(
           child: Container(
             decoration: BoxDecoration(
+                border: Border.all(),
                 borderRadius: BorderRadius.circular(20),
-                  color:const Color(0xFFFAD0C9),
-               ),
+                color: Colors.white),
             width: MediaQuery.of(context).size.width * 0.9,
-            height: MediaQuery.of(context).size.height * 0.14,
+            height: MediaQuery.of(context).size.height * 0.1,
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Text(
-                      '  education and experience'.toUpperCase(),
-                      style: const TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black),
-                    ),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.01,
-                    ),
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(
-                          Icons.edit_calendar_sharp,
-                          color: Colors.black,
-                        )),
-                  ],
-                ),
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height * 0.022,
                 ),
                 const Text(
-                  'Uploaded 12/07/2004                                               ',
-                  style: TextStyle(fontWeight: FontWeight.w400),
+                  'Upload File',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
+                const Icon(Icons.downloading_sharp),
               ],
             ),
           ),
         ),
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.06,
+          height: MediaQuery.of(context).size.height * 0.04,
         ),
         Container(
           width: MediaQuery.of(context).size.width * 0.9,
           height: MediaQuery.of(context).size.height * 0.14,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-                color: const Color(0xFFFAD0C9),
-              ),
+              color: Colors.white,
+              border: Border.all()),
           child: Row(
             children: [
               Row(
@@ -75,41 +64,24 @@ class ProfileDetails extends StatelessWidget {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Please add your resume',
+                children: const [
+                  Text('    your resume',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black)),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: MediaQuery.of(context).size.width * 0.23,
-                      height: MediaQuery.of(context).size.height * 0.07,
-                        color:const Color(0xFFFAD0C9),
-                      child: Column(children: [
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.02,
-                        ),
-                        const Icon(
-                          Icons.upload_file_outlined,
-                          color: Colors.black,
-                        ),
-                        const Text(
-                          'Press to add',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w900,
-                              fontSize: 13,
-                              color: Colors.black),
-                        )
-                      ]),
-                    ),
+                  Icon(
+                    Icons.downloading_outlined,
+                    color: Colors.black,
                   ),
                 ],
               ),
             ],
           ),
         ),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.02,
+        )
       ],
     );
   }
