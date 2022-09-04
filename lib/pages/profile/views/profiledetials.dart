@@ -32,7 +32,7 @@ class ProfileDetails extends StatelessWidget {
                     fontSize: 20,
                   ),
                 ),
-                const Icon(Icons.downloading_sharp),
+                const Icon(Icons.image_search_sharp),
               ],
             ),
           ),
@@ -71,7 +71,7 @@ class ProfileDetails extends StatelessWidget {
                           fontSize: 20,
                           color: Colors.black)),
                   Icon(
-                    Icons.downloading_outlined,
+                    Icons.image_search_sharp,
                     color: Colors.black,
                   ),
                 ],

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/SignUp/views/signup_screen.dart';
 import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
-import 'package:second_project/pages/login_page/model/textfield.dart';
 import 'package:second_project/pages/login_page/provider/logincontroller.dart';
+import 'package:second_project/pages/login_page/views/field.dart';
 
 class Signupscreen extends StatelessWidget {
   Signupscreen({Key? key}) : super(key: key);
@@ -13,6 +13,7 @@ class Signupscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Consumer<Loginprovider>(
           builder: (context, val, child) {
@@ -28,13 +29,23 @@ class Signupscreen extends StatelessWidget {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800),
                   ),
                   Image.asset('assets/computers.jpg'),
-                  TextFields(
+                  Signupfield(
+                    controller: context.watch<Loginprovider>().loginemailcontroller,
                     hint: 'Email',
                     icon: const Icon(Icons.email),
                     validator: (value) => val.email(value),
                   ),
                   const SizedBox(height: 10),
-                  TextFields(
+                  Signupfield(
+                    obscure: val.visibility,
+                    icons: IconButton(
+                        onPressed: () {
+                          val.updateVisibility();
+                        },
+                        icon: Icon(val.visibility
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility)),
+                    controller: context.watch<Loginprovider>().loginpasswordcontroller,
                     hint: 'Password',
                     icon: const Icon(Icons.vpn_key_rounded),
                     validator: (value) => val.passwords(value),
@@ -45,7 +56,7 @@ class Signupscreen extends StatelessWidget {
                     child: Material(
                       elevation: 5,
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFFAD0C9),
+                      color: const Color.fromARGB(255, 202, 227, 254),
                       child: MaterialButton(
                         padding: const EdgeInsets.fromLTRB(30, 15, 30, 15),
                         minWidth: MediaQuery.of(context).size.width * 0.8,
@@ -53,7 +64,7 @@ class Signupscreen extends StatelessWidget {
                           if (formKey.currentState!.validate()) {
                             Navigator.of(context).pushReplacement(
                               MaterialPageRoute(
-                                builder: (ctx) =>const Bottom_nav(),
+                                builder: (ctx) => const Bottom_nav(),
                               ),
                             );
                           }
@@ -114,6 +125,8 @@ class Signupscreen extends StatelessWidget {
                                 })
                         ]),
                   ),
+
+                  SizedBox(height: MediaQuery.of(context).size.height*0.03,)
                 ],
               ),
             );

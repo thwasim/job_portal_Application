@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 
 class Loginprovider with ChangeNotifier {
+
+bool visibility=false;
+  
   String? email(value) {
     if (value!.isEmpty) {
       return ("Please Enter Your Email");
@@ -10,7 +13,6 @@ class Loginprovider with ChangeNotifier {
     }
     return null;
   }
-
 
   String? passwords(value) {
     RegExp regex = RegExp(r'^.{6,}$');
@@ -22,4 +24,11 @@ class Loginprovider with ChangeNotifier {
     }
     return null;
   }
+ TextEditingController loginemailcontroller = TextEditingController();
+ TextEditingController loginpasswordcontroller = TextEditingController();
+ 
+ updateVisibility(){
+  visibility =! visibility;
+  notifyListeners();
+ }
 }

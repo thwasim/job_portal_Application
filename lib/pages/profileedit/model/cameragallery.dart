@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:second_project/pages/profileedit/provider/profileeditcontroller.dart';
 
 class CameraGallery {
   static showBottom(BuildContext context) {
@@ -31,7 +33,9 @@ class CameraGallery {
                 child: Row(
                   children: [
                     TextButton.icon(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<ProfileEditProvider>().takeCamera();
+                      },
                       icon: const Icon(Icons.camera, color: Colors.black),
                       label: const Text(
                         'Camera',
@@ -42,7 +46,9 @@ class CameraGallery {
                       width: 70,
                     ),
                     TextButton.icon(
-                        onPressed: () {},
+                        onPressed: () {
+                          context.read<ProfileEditProvider>().takeGallery();
+                        },
                         icon: const Icon(
                           Icons.image,
                           color: Colors.black,

@@ -1,8 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/SignUp/model/signuptext.dart';
-import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
-import 'package:second_project/pages/login_page/views/login_page.dart';
+import 'package:provider/provider.dart';
+import 'package:second_project/pages/SignUp/views/feild.dart';
+import '../../login_page/views/login_page.dart';
+import '../provider/signpageprovider.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class SignUp extends StatelessWidget {
                                   BoxShadow(
                                       offset: Offset(0, 4), blurRadius: 10),
                                 ],
-                                color: const Color(0xFFFAD0C9),
+                                color: const Color.fromARGB(255, 202, 227, 254),
                                 borderRadius: BorderRadius.circular(30),
                               ),
                               child: SizedBox(
@@ -73,20 +74,19 @@ class SignUp extends StatelessWidget {
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.015,
                   ),
-                const  SignUpTextField(),
+                  const SignUpTextField(),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: const EdgeInsets.only(left: 17, right: 17),
                     child: Material(
                       elevation: 5,
                       borderRadius: BorderRadius.circular(50),
-                      color: const Color(0xFFFAD0C9),
+                      color: const Color.fromARGB(255, 202, 227, 254),
                       child: MaterialButton(
                         padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
                         minWidth: MediaQuery.of(context).size.width,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (ctx) =>const Bottom_nav()));
+                            context.read<Signupprovider>().signupfunction(context);
                           }
                         },
                         child: const Text('Sign Up',
@@ -97,6 +97,16 @@ class SignUp extends StatelessWidget {
                                 fontWeight: FontWeight.bold)),
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.01,
+                  ),
+                  const Text(
+                    'Or',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17,
+                        color: Colors.white),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.01,
@@ -125,7 +135,7 @@ class SignUp extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.05,
+                    height: MediaQuery.of(context).size.height * 0.02,
                   ),
                   RichText(
                     text: TextSpan(
@@ -143,6 +153,9 @@ class SignUp extends StatelessWidget {
                                       builder: (ctx) => Signupscreen()));
                                 })
                         ]),
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.04,
                   ),
                 ],
               ),

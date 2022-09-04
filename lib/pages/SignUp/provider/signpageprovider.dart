@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:second_project/service/api_service.dart';
+
+import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {
-
   String? username(value) {
     RegExp regex = RegExp(r'^.{3,}$');
     if (value!.isEmpty) {
@@ -25,6 +27,7 @@ class Signupprovider with ChangeNotifier {
 
   String? password(value) {
     RegExp regex = RegExp(r'^.{6,}$');
+
     if (value!.isEmpty) {
       return ("Type Your Password");
     }
@@ -33,5 +36,32 @@ class Signupprovider with ChangeNotifier {
     }
     return null;
   }
-  
+
+  String? confirmpasswords(value) {
+    if (value!.isEmpty) {
+      return 'Type Your Password';
+    }
+    if (confirmpasswordcontroller.text != passwordcontroller.text) {
+      return ("Password don't match");
+    }
+    return null;
+  }
+
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController firstnamecontroller = TextEditingController();
+  TextEditingController lastnamecontroller = TextEditingController();
+  TextEditingController rolecontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
+  TextEditingController confirmpasswordcontroller = TextEditingController();
+
+  signupfunction(context) {
+    Apiservice().siguppostfunction(
+        context,
+        Signupmodel(
+          email: emailcontroller.text.trim(),
+          firstName: firstnamecontroller.text.trim(),
+          role: rolecontroller.text.trim(),
+          password: passwordcontroller.text.trim(),
+        ));
+  }
 }

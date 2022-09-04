@@ -7,9 +7,9 @@ class ProfileEdit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+      backgroundColor:const Color.fromARGB(255, 236, 210, 134),
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+        backgroundColor: const Color.fromARGB(255, 236, 210, 134),
         title: const Text('Edit Profile'),
         centerTitle: true,
       ),

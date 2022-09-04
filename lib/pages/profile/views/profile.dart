@@ -9,7 +9,7 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+      backgroundColor: const Color.fromARGB(255, 236, 210, 134),
       body: SingleChildScrollView(
         child: Column(
           children: [

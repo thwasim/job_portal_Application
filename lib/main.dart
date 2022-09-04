@@ -5,6 +5,7 @@ import 'package:second_project/pages/application/provider/applicationprovider.da
 import 'package:second_project/pages/bottom_nav_bar/provider/botton_nav_controller.dart';
 import 'package:second_project/pages/introduction/provider/introdutioncontroller.dart';
 import 'package:second_project/pages/login_page/provider/logincontroller.dart';
+import 'package:second_project/pages/profileedit/provider/profileeditcontroller.dart';
 import 'package:second_project/pages/splah_screen/provider/splah_controller.dart';
 import 'package:second_project/pages/splah_screen/views/splash_screen.dart';
 
@@ -18,6 +19,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => Loginprovider()),
         ChangeNotifierProvider(create: (_) => Signupprovider()),
         ChangeNotifierProvider(create: (_) => Applicationsprovider()),
+        ChangeNotifierProvider(create: (_) => ProfileEditProvider()),
       ],
       child: const MyApp(),
     ),

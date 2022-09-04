@@ -21,7 +21,7 @@ class Introdutionscreen extends StatelessWidget {
                   onPageChanged:(int index){
                     value.updateIndex(index);
                   },
-                  itemCount:value.Introdutionscreen
+                  itemCount:value.introdutionscreen
                       .length,
                   itemBuilder: (context, index) {
                     return Column(
@@ -32,14 +32,14 @@ class Introdutionscreen extends StatelessWidget {
                             child: Image.asset(
                               context
                                   .watch<Introductionprovider>()
-                                  .Introdutionscreen[index]
+                                  .introdutionscreen[index]
                                   .imageAssets,
                               fit: BoxFit.fill,
                             )),
                         Text(
                           context
                               .watch<Introductionprovider>()
-                              .Introdutionscreen[index]
+                              .introdutionscreen[index]
                               .title,
                           style: const TextStyle(
                               fontSize: 50, fontWeight: FontWeight.w900),
@@ -50,14 +50,13 @@ class Introdutionscreen extends StatelessWidget {
                         Text(
                           context
                               .watch<Introductionprovider>()
-                              .Introdutionscreen[index]
+                              .introdutionscreen[index]
                               .descreiption,
                           style: const TextStyle(fontSize: 20),
                         ),
                       ],
                     );
                   });
-
               },
               
             ),
@@ -68,7 +67,7 @@ class Introdutionscreen extends StatelessWidget {
                 builder: (context, value, child) {
                   return  Row(
                     children: List.generate(
-                  context.watch<Introductionprovider>().Introdutionscreen.length,
+                  context.watch<Introductionprovider>().introdutionscreen.length,
                   (index) => Container(
                     margin: const EdgeInsets.all(4),
                     width: 15,
@@ -87,7 +86,7 @@ class Introdutionscreen extends StatelessWidget {
             ),
             Positioned(
               right: 20,
-              bottom: 10,
+              bottom: 11,
               child: TextButton(onPressed: () {
                 context.read<Introductionprovider>().forwardAction(context);
               }, child: Text(
@@ -99,8 +98,7 @@ class Introdutionscreen extends StatelessWidget {
              ),
             ),
           ],
-        )
-        
+        ),
     );
   }
 }

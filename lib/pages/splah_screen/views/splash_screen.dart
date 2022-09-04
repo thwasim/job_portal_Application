@@ -3,13 +3,13 @@ import 'package:provider/provider.dart';
 import 'package:second_project/pages/splah_screen/provider/splah_controller.dart';
 
 class Screensplash extends StatelessWidget {
- const Screensplash({Key? key}) : super(key: key);
+  const Screensplash({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     context.read<Splahprovider>().gohome(context);
     return Scaffold(
-      body:  Container(
+      body: Container(
         decoration: const BoxDecoration(
             gradient: LinearGradient(
           begin: Alignment.topRight,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:second_project/pages/profileedit/model/cameragallery.dart';
 
+
 class Textfeild extends StatelessWidget {
   const Textfeild({Key? key}) : super(key: key);
 
@@ -92,10 +93,12 @@ class Textfeild extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            // context.read<ProfileEditProvider>().takeGallery();
+          },
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(),
+                border: Border.all(width: 3),
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.white),
             width: MediaQuery.of(context).size.width * 0.4,
@@ -103,7 +106,7 @@ class Textfeild extends StatelessWidget {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height*0.028,
+                  height: MediaQuery.of(context).size.height * 0.023,
                 ),
                 const Icon(Icons.drive_folder_upload_outlined),
               ],
@@ -118,25 +121,29 @@ class Textfeild extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            // context.read<ProfileEditProvider>().takeGallery();
+          },
           child: Container(
             decoration: BoxDecoration(
-                border: Border.all(),
+                border: Border.all(width: 3),
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.white),
+                color: const Color.fromARGB(255, 255, 255, 255)),
             width: MediaQuery.of(context).size.width * 0.4,
             height: MediaQuery.of(context).size.height * 0.08,
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.028,
+                  height: MediaQuery.of(context).size.height * 0.025,
                 ),
                 const Icon(Icons.drive_folder_upload_outlined),
               ],
             ),
           ),
         ),
-        SizedBox(height: MediaQuery.of(context).size.height*0.01,),
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.01,
+        ),
         Material(
           elevation: 9,
           borderRadius: BorderRadius.circular(50),
@@ -155,7 +162,9 @@ class Textfeild extends StatelessWidget {
                     fontWeight: FontWeight.bold)),
           ),
         ),
-        SizedBox(height: MediaQuery.of(context).size.height*0.02,)
+        SizedBox(
+          height: MediaQuery.of(context).size.height * 0.02,
+        )
       ],
     );
   }

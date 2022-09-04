@@ -28,12 +28,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  dio: ^4.0.6
   flashy_tab_bar2: ^0.0.4
   flutter:
     sdk: flutter
   im_stepper: ^1.0.1+1
+  image_picker: ^0.8.5+3
   provider: ^6.0.3
-  status_change: ^2.0.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0

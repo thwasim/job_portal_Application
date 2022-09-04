@@ -4,18 +4,16 @@ import 'package:provider/provider.dart';
 import 'package:second_project/pages/application/model/application_model.dart';
 import 'package:second_project/pages/application/provider/applicationprovider.dart';
 
-
 class Application extends StatelessWidget {
- const Application({Key? key}) : super(key: key);
-
+  const Application({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+        backgroundColor: const Color.fromARGB(255, 236, 210, 134),
       ),
-      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+      backgroundColor: const Color.fromARGB(255, 236, 210, 134),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -64,8 +62,9 @@ class Application extends StatelessWidget {
                             SizedBox(
                                 width:
                                     MediaQuery.of(context).size.width * 0.27),
-                            context.watch<Applicationsprovider>().activeStep != 0? 
-                            InkWell(
+                            context.watch<Applicationsprovider>().activeStep !=
+                                    0
+                                ? InkWell(
                                     onTap: () {},
                                     child: const CallAndChat(
                                         name: ' Chat',
@@ -78,9 +77,13 @@ class Application extends StatelessWidget {
                             SizedBox(
                                 width:
                                     MediaQuery.of(context).size.width * 0.04),
-                            context.watch<Applicationsprovider>().activeStep !=0 &&
-                                    context.watch<Applicationsprovider>().activeStep != 1? 
-                                  InkWell(
+                            context.watch<Applicationsprovider>().activeStep !=
+                                        0 &&
+                                    context
+                                            .watch<Applicationsprovider>()
+                                            .activeStep !=
+                                        1
+                                ? InkWell(
                                     onTap: () {},
                                     child: const CallAndChat(
                                         name: ' Call',

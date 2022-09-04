@@ -6,7 +6,7 @@ class Introductionprovider with ChangeNotifier {
   
   int selectedpageindex = 0;
   PageController pagecontroller = PageController();
-  bool get islastpage => selectedpageindex == Introdutionscreen.length -1;
+  bool get islastpage => selectedpageindex == introdutionscreen.length -1;
 
   updateIndex(index){ 
      selectedpageindex =index;
@@ -17,16 +17,13 @@ class Introductionprovider with ChangeNotifier {
   
     if(selectedpageindex == 2){
       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>Signupscreen()));
-      // notifyListeners();
     }
     else{
       pagecontroller.nextPage(duration:const Duration(milliseconds: 300), curve: Curves.ease);
-      // notifyListeners();
     }
   }
 
-  // ignore: non_constant_identifier_names
-  List<Introductioninfo> Introdutionscreen = [
+  List<Introductioninfo> introdutionscreen = [
     Introductioninfo('assets/intro_1.png', 'hiring\nemployess'.toUpperCase(),
         'find attractive candidates'),
     Introductioninfo('assets/intro_2.png', 'we are\n hiring'.toUpperCase(),

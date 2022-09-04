@@ -6,9 +6,9 @@ class Notifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+      backgroundColor: const Color.fromARGB(255, 236, 210, 134),
       appBar: AppBar(
-       backgroundColor: const Color.fromARGB(255, 239, 206, 108),
+       backgroundColor: const Color.fromARGB(255, 236, 210, 134),
         centerTitle: true,
         title: const Text(
           'Notification',
@@ -53,7 +53,7 @@ class Notifications extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: const [
                           Padding(
-                            padding: EdgeInsets.only(right: 3, left: 3),
+                            padding: EdgeInsets.only(left: 20),
                             child: Text(
                               'You have selected to google company to Access the chat',
                               style: TextStyle(
