@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/descreption/descreption.dart';
+import '../../descreption/view/descreption.dart';
 
 class Cardinside extends StatelessWidget {
   const Cardinside({Key? key}) : super(key: key);
@@ -15,23 +15,20 @@ class Cardinside extends StatelessWidget {
               child: CircleAvatar(
                 radius: 30,
                 backgroundColor: Colors.white,
-                child: Image.asset(
-                    'assets/google.png'),
+                child: Image.asset('assets/google.png'),
               ),
             ),
             const Text(
               '   Flutter Developer',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            
             SizedBox(
               width: MediaQuery.of(context).size.width * 0.13,
             ),
             const Text(
-                '2 days',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-           
+              '2 days',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
           ],
         ),
         const Padding(
@@ -73,12 +70,16 @@ class Cardinside extends StatelessWidget {
                       color: Colors.black)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary:  Colors.white,
+                  primary: Colors.white,
                 ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const JobDetails()));
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (ctx) => const JobDetails()));
                 },
-                child: Text('details'.toUpperCase(),style: const TextStyle(color: Colors.black),),
+                child: Text(
+                  'details'.toUpperCase(),
+                  style: const TextStyle(color: Colors.black),
+                ),
               )
             ],
           ),

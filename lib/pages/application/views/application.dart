@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/application/model/application_model.dart';
-import 'package:second_project/pages/application/provider/applicationprovider.dart';
+import 'package:second_project/pages/application/controller/applicationprovider.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);

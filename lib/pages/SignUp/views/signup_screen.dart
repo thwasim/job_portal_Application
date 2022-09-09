@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/SignUp/views/feild.dart';
 import '../../login_page/views/login_page.dart';
-import '../provider/signpageprovider.dart';
+import '../controller/signpageprovider.dart';
 
 class SignUp extends StatelessWidget {
   SignUp({Key? key}) : super(key: key);

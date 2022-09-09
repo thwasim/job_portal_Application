@@ -9,7 +9,6 @@ class Signupfield extends StatelessWidget {
     required this.controller,
     this.icons,
     this.obscure,
-    this.readOnly,
   }) : super(key: key);
 
   final String hint;
@@ -18,7 +17,6 @@ class Signupfield extends StatelessWidget {
   final FormFieldValidator<String>? validator;
   final IconButton? icons;
   final bool? obscure;
-  final bool? readOnly;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +25,6 @@ class Signupfield extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(right: 19, left: 19, top: 10),
           child: TextFormField(
-            readOnly: readOnly??false,
             autofocus: false,
             validator: validator,
             controller: controller,

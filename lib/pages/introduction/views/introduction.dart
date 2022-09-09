@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:second_project/pages/introduction/provider/introdutioncontroller.dart';
+import '../controller/introdutioncontroller.dart';
 
 class Introdutionscreen extends StatelessWidget {
   const Introdutionscreen({Key? key}) : super(key: key);
@@ -21,8 +21,7 @@ class Introdutionscreen extends StatelessWidget {
                   onPageChanged:(int index){
                     value.updateIndex(index);
                   },
-                  itemCount:value.introdutionscreen
-                      .length,
+                  itemCount:value.introdutionscreen.length,
                   itemBuilder: (context, index) {
                     return Column(
                       children: [
@@ -30,11 +29,9 @@ class Introdutionscreen extends StatelessWidget {
                             width: double.infinity,
                             height: 500,
                             child: Image.asset(
-                              context
-                                  .watch<Introductionprovider>()
-                                  .introdutionscreen[index]
+                              context.watch<Introductionprovider>().introdutionscreen[index]
                                   .imageAssets,
-                              fit: BoxFit.fill,
+                              fit: BoxFit.contain,
                             )),
                         Text(
                           context
@@ -73,8 +70,7 @@ class Introdutionscreen extends StatelessWidget {
                     width: 15,
                     height: 15,
                     decoration: BoxDecoration(
-                        color: value
-                                    .selectedpageindex ==
+                        color: value.selectedpageindex ==
                                 index
                             ? Colors.cyan
                             : Colors.grey,

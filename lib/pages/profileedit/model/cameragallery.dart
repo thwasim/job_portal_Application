@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:second_project/pages/profileedit/provider/profileeditcontroller.dart';
+import 'package:second_project/pages/profileedit/controller/profileeditcontroller.dart';
 
 class CameraGallery {
   static showBottom(BuildContext context) {

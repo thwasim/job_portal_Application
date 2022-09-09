@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/descreption/descreptionfunction.dart';
+import 'package:second_project/pages/descreption/view/descreptionfunction.dart';
 
 class JobDetails extends StatelessWidget {
   const JobDetails({Key? key}) : super(key: key);
@@ -95,8 +95,8 @@ class JobDetails extends StatelessWidget {
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
-                     const Text(
+                    children:const  [
+                      Text(
                         "APPLY",
                         style: TextStyle(
                           color: Colors.white,
@@ -104,7 +104,7 @@ class JobDetails extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: MediaQuery.of(context).size.width*0.16),
+                      // SizedBox(width: MediaQuery.of(context).size.width*0.16),
                     //  const Icon(
                     //     Icons.keyboard_arrow_right,
                     //     color: Colors.white,

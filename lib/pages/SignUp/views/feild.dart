@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../login_page/views/field.dart';
-import '../provider/signpageprovider.dart';
+import '../controller/signpageprovider.dart';
 
 class SignUpTextField extends StatelessWidget {
   const SignUpTextField({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    context.watch<Signupprovider>().rolecontroller.text = 'seeker';
     return Consumer<Signupprovider>(
       builder: (context, values, child) {
         return Column(
@@ -30,7 +29,6 @@ class SignUpTextField extends StatelessWidget {
             Signupfield(
               controller: context.watch<Signupprovider>().rolecontroller,
               hint: 'role',
-             readOnly: true,
               icon: const Icon(Icons.person_pin),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),

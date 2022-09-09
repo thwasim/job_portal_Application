@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:second_project/service/api_service.dart';
-
+import 'package:second_project/service/api_service_signup.dart';
 import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {
@@ -41,7 +40,7 @@ class Signupprovider with ChangeNotifier {
     if (value!.isEmpty) {
       return 'Type Your Password';
     }
-    if (confirmpasswordcontroller.text != passwordcontroller.text) {
+    if (confirmpasswordcontroller.text.trim() != passwordcontroller.text.trim()) {
       return ("Password don't match");
     }
     return null;
@@ -54,8 +53,8 @@ class Signupprovider with ChangeNotifier {
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController confirmpasswordcontroller = TextEditingController();
 
-  signupfunction(context) {
-    Apiservice().siguppostfunction(
+ void signupfunction(context) {
+    Apiservicesignup().signuppostfunction(
         context,
         Signupmodel(
           email: emailcontroller.text.trim(),

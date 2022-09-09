@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:second_project/pages/home/views/homefunctions.dart';
 import 'package:second_project/pages/home/views/homefunction.dart';
-import 'package:second_project/pages/home/widgets/homefunctions.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -49,7 +49,6 @@ class HomePage extends StatelessWidget {
                         return SizedBox(
                           height: MediaQuery.of(context).size.height * 0.245,
                           child: Card(
-                            // color:const Color(0xFFFAD0C9),
                             shape: const RoundedRectangleBorder(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(30.0),

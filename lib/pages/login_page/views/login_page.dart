@@ -2,8 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/SignUp/views/signup_screen.dart';
-import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
-import 'package:second_project/pages/login_page/provider/logincontroller.dart';
+import 'package:second_project/pages/login_page/controller/logincontroller.dart';
 import 'package:second_project/pages/login_page/views/field.dart';
 
 class Signupscreen extends StatelessWidget {
@@ -30,7 +29,8 @@ class Signupscreen extends StatelessWidget {
                   ),
                   Image.asset('assets/computers.jpg'),
                   Signupfield(
-                    controller: context.watch<Loginprovider>().loginemailcontroller,
+                    controller:
+                        context.watch<Loginprovider>().loginemailcontroller,
                     hint: 'Email',
                     icon: const Icon(Icons.email),
                     validator: (value) => val.email(value),
@@ -45,7 +45,8 @@ class Signupscreen extends StatelessWidget {
                         icon: Icon(val.visibility
                             ? Icons.visibility_off_outlined
                             : Icons.visibility)),
-                    controller: context.watch<Loginprovider>().loginpasswordcontroller,
+                    controller:
+                        context.watch<Loginprovider>().loginpasswordcontroller,
                     hint: 'Password',
                     icon: const Icon(Icons.vpn_key_rounded),
                     validator: (value) => val.passwords(value),
@@ -62,11 +63,7 @@ class Signupscreen extends StatelessWidget {
                         minWidth: MediaQuery.of(context).size.width * 0.8,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            Navigator.of(context).pushReplacement(
-                              MaterialPageRoute(
-                                builder: (ctx) => const Bottom_nav(),
-                              ),
-                            );
+                            context.read<Loginprovider>().loginfunction(context);
                           }
                         },
                         child: const Text('Login',
@@ -120,13 +117,15 @@ class Signupscreen extends StatelessWidget {
                                   color: Colors.blueAccent, fontSize: 18),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (ctx) => SignUp()));
+                                  Navigator.of(context).pushReplacement(
+                                      MaterialPageRoute(
+                                          builder: (ctx) => SignUp()));
                                 })
                         ]),
                   ),
-
-                  SizedBox(height: MediaQuery.of(context).size.height*0.03,)
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 0.03,
+                  )
                 ],
               ),
             );

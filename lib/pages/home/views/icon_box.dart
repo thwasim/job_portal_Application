@@ -15,7 +15,6 @@ class IconBox extends StatelessWidget {
   final IconData? icon;
   final Color iconColor;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,14 +22,10 @@ class IconBox extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color:const Color(0xff23232c),
+        color: const Color(0xff23232c),
         borderRadius: BorderRadius.circular(radius),
       ),
-      child: Icon(
-        icon,
-        color: iconColor,
-        size:28
-      ),
+      child: Icon(icon, color: iconColor, size: 28),
     );
   }
 }

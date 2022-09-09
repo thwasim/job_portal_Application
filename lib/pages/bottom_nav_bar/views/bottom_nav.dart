@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:provider/provider.dart';
-import 'package:second_project/pages/bottom_nav_bar/provider/botton_nav_controller.dart';
+import 'package:second_project/pages/bottom_nav_bar/controller/botton_nav_controller.dart';
 
 // ignore: camel_case_types
 class Bottom_nav extends StatelessWidget {

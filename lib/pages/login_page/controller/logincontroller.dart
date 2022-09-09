@@ -1,9 +1,15 @@
 import 'package:flutter/cupertino.dart';
+import 'package:second_project/service/api_service_login.dart';
+import '../model/loginmodel.dart';
 
 class Loginprovider with ChangeNotifier {
+  bool visibility = false;
 
-bool visibility=false;
-  
+  updateVisibility() {
+    visibility = !visibility;
+    notifyListeners();
+  }
+
   String? email(value) {
     if (value!.isEmpty) {
       return ("Please Enter Your Email");
@@ -24,11 +30,15 @@ bool visibility=false;
     }
     return null;
   }
- TextEditingController loginemailcontroller = TextEditingController();
- TextEditingController loginpasswordcontroller = TextEditingController();
- 
- updateVisibility(){
-  visibility =! visibility;
-  notifyListeners();
- }
+
+  TextEditingController loginemailcontroller = TextEditingController();
+  TextEditingController loginpasswordcontroller = TextEditingController();
+
+  loginfunction(BuildContext context) {
+    Apiservicelogin().loginpostfunction(
+        context,
+        Loginmodel(
+            email: loginemailcontroller.text.trim(),
+            password: loginpasswordcontroller.text.trim()));
+  }
 }

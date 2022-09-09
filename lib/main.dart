@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:second_project/pages/SignUp/provider/signpageprovider.dart';
-import 'package:second_project/pages/application/provider/applicationprovider.dart';
-import 'package:second_project/pages/bottom_nav_bar/provider/botton_nav_controller.dart';
-import 'package:second_project/pages/introduction/provider/introdutioncontroller.dart';
-import 'package:second_project/pages/login_page/provider/logincontroller.dart';
-import 'package:second_project/pages/profileedit/provider/profileeditcontroller.dart';
-import 'package:second_project/pages/splah_screen/provider/splah_controller.dart';
+import 'package:second_project/pages/SignUp/controller/signpageprovider.dart';
+import 'package:second_project/pages/application/controller/applicationprovider.dart';
+import 'package:second_project/pages/bottom_nav_bar/controller/botton_nav_controller.dart';
+import 'package:second_project/pages/introduction/controller/introdutioncontroller.dart';
+import 'package:second_project/pages/login_page/controller/logincontroller.dart';
+import 'package:second_project/pages/profileedit/controller/profileeditcontroller.dart';
+import 'package:second_project/pages/splah_screen/controller/splah_controller.dart';
 import 'package:second_project/pages/splah_screen/views/splash_screen.dart';
 
 void main() {
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false, 
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
