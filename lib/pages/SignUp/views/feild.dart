@@ -5,7 +5,6 @@ import '../controller/signpageprovider.dart';
 
 class SignUpTextField extends StatelessWidget {
   const SignUpTextField({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Consumer<Signupprovider>(
@@ -13,27 +12,21 @@ class SignUpTextField extends StatelessWidget {
         return Column(
           children: [
             Signupfield(
-              controller: context.watch<Signupprovider>().firstnamecontroller,
+              controller: context.watch<Signupprovider>().firstNameController,
               hint: 'Full Name',
               icon: const Icon(Icons.person),
               validator: (value) => values.username(value),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Signupfield(
-              controller: context.watch<Signupprovider>().emailcontroller,
+              controller: context.watch<Signupprovider>().emailController,
               hint: 'Email',
               icon: const Icon(Icons.email),
               validator: (value) => values.email(value),
             ),
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Signupfield(
-              controller: context.watch<Signupprovider>().rolecontroller,
-              hint: 'role',
-              icon: const Icon(Icons.person_pin),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height * 0.01),
-            Signupfield(
-              controller: context.watch<Signupprovider>().passwordcontroller,
+              controller: context.watch<Signupprovider>().passwordController,
               hint: 'Password',
               icon: const Icon(Icons.vpn_key),
               validator: (value) => values.password(value),
@@ -41,7 +34,7 @@ class SignUpTextField extends StatelessWidget {
             SizedBox(height: MediaQuery.of(context).size.height * 0.01),
             Signupfield(
                 controller:
-                    context.watch<Signupprovider>().confirmpasswordcontroller,
+                    context.watch<Signupprovider>().confirmpasswordController,
                 hint: 'Confirm Password',
                 validator: ((value) => values.confirmpasswords(value)),
                 icon: const Icon(Icons.lock)),

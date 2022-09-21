@@ -31,14 +31,16 @@ class Loginprovider with ChangeNotifier {
     return null;
   }
 
-  TextEditingController loginemailcontroller = TextEditingController();
-  TextEditingController loginpasswordcontroller = TextEditingController();
+  TextEditingController loginEmailController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
+  TextEditingController rolecontroller = TextEditingController();
 
   loginfunction(BuildContext context) {
     Apiservicelogin().loginpostfunction(
         context,
         Loginmodel(
-            email: loginemailcontroller.text.trim(),
-            password: loginpasswordcontroller.text.trim()));
+          // role: rolecontroller.text.trim(),
+            email: loginEmailController.text.trim(),
+            password: loginPasswordController.text.trim()));
   }
 }

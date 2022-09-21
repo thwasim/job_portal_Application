@@ -40,27 +40,27 @@ class Signupprovider with ChangeNotifier {
     if (value!.isEmpty) {
       return 'Type Your Password';
     }
-    if (confirmpasswordcontroller.text.trim() != passwordcontroller.text.trim()) {
+    if (confirmpasswordController.text.trim() != passwordController.text.trim()) {
       return ("Password don't match");
     }
     return null;
   }
 
-  TextEditingController emailcontroller = TextEditingController();
-  TextEditingController firstnamecontroller = TextEditingController();
-  TextEditingController lastnamecontroller = TextEditingController();
-  TextEditingController rolecontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
-  TextEditingController confirmpasswordcontroller = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController roleController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
 
  void signupfunction(context) {
     Apiservicesignup().signuppostfunction(
         context,
         Signupmodel(
-          email: emailcontroller.text.trim(),
-          firstName: firstnamecontroller.text.trim(),
-          role: rolecontroller.text.trim(),
-          password: passwordcontroller.text.trim(),
+          email: emailController.text.trim(),
+          firstName: firstNameController.text.trim(),
+          role: roleController.text.trim(),
+          password: passwordController.text.trim(),
         ));
   }
 }

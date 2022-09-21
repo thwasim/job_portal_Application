@@ -15,7 +15,7 @@ class Introductionprovider with ChangeNotifier {
   forwardAction(BuildContext context) {
     if (selectedpageindex == 2) {
       Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (ctx) => Signupscreen()));
+          .pushReplacement(MaterialPageRoute(builder: (ctx) => SignInscreen()));
     } else {
       pagecontroller.nextPage(
           duration: const Duration(milliseconds: 300), curve: Curves.ease);

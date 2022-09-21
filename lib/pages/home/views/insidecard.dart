@@ -3,7 +3,7 @@ import '../../descreption/view/descreption.dart';
 
 class Cardinside extends StatelessWidget {
   const Cardinside({Key? key}) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(

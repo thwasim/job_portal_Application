@@ -13,7 +13,7 @@ class Signupmodel {
   Map<String, dynamic> tojson() => {
         "email": email,
         "first_name": firstName,
-        "role": role,
+        "role": "seeker",
         "password": password
         
       };

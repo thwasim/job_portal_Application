@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
 import 'package:second_project/pages/login_page/model/loginmodel.dart';
 
-
-
 class Apiservicelogin {
   // **************************** login ****************************//
 
@@ -27,6 +25,8 @@ class Apiservicelogin {
       if (e.error.toString().contains('SocketException')) {
         log("Connection refused !");
         return;
+      } else {
+        log(e.message);
       }
     }
   }

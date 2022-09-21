@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/profileedit/model/textfield.dart';
+import 'textfield.dart';
 
 class ProfileEdit extends StatelessWidget {
   const ProfileEdit({Key? key}) : super(key: key);

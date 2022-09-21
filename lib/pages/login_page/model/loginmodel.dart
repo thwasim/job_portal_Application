@@ -3,8 +3,10 @@ class Loginmodel {
   String password = '';
 
   Loginmodel(
-    {required this.email,
-     required this.password}
+    {
+      required this.email,
+      required this.password,
+     }
      );
 
      Map <String ,dynamic> tojson ()=> {

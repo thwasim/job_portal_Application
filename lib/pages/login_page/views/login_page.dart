@@ -2,11 +2,11 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/SignUp/views/signup_screen.dart';
-import 'package:second_project/pages/login_page/controller/logincontroller.dart';
 import 'package:second_project/pages/login_page/views/field.dart';
+import '../controller/logincontroller.dart';
 
-class Signupscreen extends StatelessWidget {
-  Signupscreen({Key? key}) : super(key: key);
+class SignInscreen extends StatelessWidget {
+  SignInscreen({Key? key}) : super(key: key);
 
   final formKey = GlobalKey<FormState>();
   @override
@@ -30,7 +30,7 @@ class Signupscreen extends StatelessWidget {
                   Image.asset('assets/computers.jpg'),
                   Signupfield(
                     controller:
-                        context.watch<Loginprovider>().loginemailcontroller,
+                        context.watch<Loginprovider>().loginEmailController,
                     hint: 'Email',
                     icon: const Icon(Icons.email),
                     validator: (value) => val.email(value),
@@ -46,7 +46,7 @@ class Signupscreen extends StatelessWidget {
                             ? Icons.visibility_off_outlined
                             : Icons.visibility)),
                     controller:
-                        context.watch<Loginprovider>().loginpasswordcontroller,
+                        context.watch<Loginprovider>().loginPasswordController,
                     hint: 'Password',
                     icon: const Icon(Icons.vpn_key_rounded),
                     validator: (value) => val.passwords(value),
@@ -119,7 +119,7 @@ class Signupscreen extends StatelessWidget {
                                 ..onTap = () {
                                   Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
-                                          builder: (ctx) => SignUp()));
+                                          builder: (ctx) => SignUpScreen()));
                                 })
                         ]),
                   ),

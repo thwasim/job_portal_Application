@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/home/views/homefunctions.dart';
+import 'package:second_project/pages/home/views/insidecard.dart';
 import 'package:second_project/pages/home/views/homefunction.dart';
 
 class HomePage extends StatelessWidget {

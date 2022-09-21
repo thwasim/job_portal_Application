@@ -5,8 +5,8 @@ import 'package:second_project/pages/SignUp/views/feild.dart';
 import '../../login_page/views/login_page.dart';
 import '../controller/signpageprovider.dart';
 
-class SignUp extends StatelessWidget {
-  SignUp({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  SignUpScreen({Key? key}) : super(key: key);
 
   final formKey = GlobalKey<FormState>();
   @override
@@ -150,7 +150,7 @@ class SignUp extends StatelessWidget {
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (ctx) => Signupscreen()));
+                                      builder: (ctx) => SignInscreen()));
                                 })
                         ]),
                   ),
