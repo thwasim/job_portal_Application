@@ -1,7 +1,7 @@
 class Signupmodel {
   String email = '';
   String firstName = '';
-  String role = '';
+  String role = 'seeker';
   String password = '';
 
   Signupmodel(

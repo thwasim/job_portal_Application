@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:second_project/service/api_service_signup.dart';
+import 'package:second_project/service/api/auth/signup.dart';
 import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {

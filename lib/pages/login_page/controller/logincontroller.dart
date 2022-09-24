@@ -1,6 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:second_project/service/api_service_login.dart';
-import '../model/loginmodel.dart';
+
+
+import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
+import 'package:second_project/pages/login_page/model/loginmodel.dart';
+import 'package:second_project/service/api/auth/login.dart';
+
 
 class Loginprovider with ChangeNotifier {
   bool visibility = false;
@@ -31,16 +37,22 @@ class Loginprovider with ChangeNotifier {
     return null;
   }
 
-  TextEditingController loginEmailController = TextEditingController();
-  TextEditingController loginPasswordController = TextEditingController();
-  TextEditingController rolecontroller = TextEditingController();
+  TextEditingController loginEmailController = TextEditingController(text: 'ronaldo@gmail.com');
+  TextEditingController loginPasswordController = TextEditingController(text: 'rono74100');
 
   loginfunction(BuildContext context) {
     Apiservicelogin().loginpostfunction(
-        context,
-        Loginmodel(
-          // role: rolecontroller.text.trim(),
-            email: loginEmailController.text.trim(),
-            password: loginPasswordController.text.trim()));
+      context,
+      Loginmodel(
+          email: loginEmailController.text.trim(),
+          password: loginPasswordController.text.trim()),
+    ).then(
+      (response) {
+        if (response == "success") {
+          Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (ctx) => const Bottom_nav()));
+        }
+      },
+    );
   }
 }

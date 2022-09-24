@@ -115,9 +115,7 @@ class Textfeild extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {
-            // context.read<ProfileEditProvider>().takeGallery();
-          },
+          onTap: () {},
           child: Container(
             decoration: BoxDecoration(
                 border: Border.all(width: 3),
