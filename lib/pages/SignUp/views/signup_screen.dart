@@ -42,18 +42,19 @@ class SignUpScreen extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30),
                               ),
                               child: SizedBox(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.9,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.15,
-                                  child: const Center(
-                                      child: Text(
+                                width: MediaQuery.of(context).size.width * 0.9,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.15,
+                                child: const Center(
+                                  child: Text(
                                     'Find your dream Job',
                                     style: TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,
                                         color: Colors.white),
-                                  ))),
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -86,15 +87,19 @@ class SignUpScreen extends StatelessWidget {
                         minWidth: MediaQuery.of(context).size.width,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            context.read<Signupprovider>().signupfunction(context);
+                            context
+                                .read<Signupprovider>()
+                                .signupfunction(context);
                           }
                         },
-                        child: const Text('Sign Up',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold)),
+                        child: const Text(
+                          'Sign Up',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),
@@ -117,21 +122,22 @@ class SignUpScreen extends StatelessWidget {
                       elevation: 5,
                       borderRadius: BorderRadius.circular(50),
                       child: MaterialButton(
-                          padding: const EdgeInsets.fromLTRB(10, 13, 10, 13),
-                          onPressed: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.transparent,
-                                child: Image.asset('assets/google.png'),
-                              ),
-                              const Text(
-                                'Sign With Google',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          )),
+                        padding: const EdgeInsets.fromLTRB(10, 13, 10, 13),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Image.asset('assets/google.png'),
+                            ),
+                            const Text(
+                              'Sign With Google',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -139,20 +145,23 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   RichText(
                     text: TextSpan(
-                        text: 'I have an account',
-                        style:
-                            const TextStyle(color: Colors.white, fontSize: 18),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ' Sign up',
-                              style: const TextStyle(
-                                  color: Colors.blueAccent, fontSize: 18),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (ctx) => SignInscreen()));
-                                })
-                        ]),
+                      text: 'I have an account',
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: ' Sign up',
+                          style: const TextStyle(
+                              color: Colors.blueAccent, fontSize: 18),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (ctx) => SignInscreen()),
+                              );
+                            },
+                        ),
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.04,

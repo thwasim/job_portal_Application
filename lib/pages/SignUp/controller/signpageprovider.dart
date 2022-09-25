@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
-import 'package:second_project/service/api/auth/signup.dart';
+import 'package:flutter/material.dart';
+import '../../../service/api/auth/signup.dart';
+import '../../bottom_nav_bar/views/bottom_nav.dart';
 import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {
@@ -25,13 +26,13 @@ class Signupprovider with ChangeNotifier {
   }
 
   String? password(value) {
-    RegExp regex = RegExp(r'^.{6,}$');
+    RegExp regex = RegExp(r'^.{8,}$');
 
     if (value!.isEmpty) {
       return ("Type Your Password");
     }
     if (!regex.hasMatch(value)) {
-      return ("Enter Valid Password(Min. 6 Character)");
+      return ("Enter Valid Password(Min. 8 Character)");
     }
     return null;
   }
@@ -40,7 +41,8 @@ class Signupprovider with ChangeNotifier {
     if (value!.isEmpty) {
       return 'Type Your Password';
     }
-    if (confirmpasswordController.text.trim() != passwordController.text.trim()) {
+    if (confirmpasswordController.text.trim() !=
+        passwordController.text.trim()) {
       return ("Password don't match");
     }
     return null;
@@ -53,14 +55,26 @@ class Signupprovider with ChangeNotifier {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
 
- void signupfunction(context) {
-    Apiservicesignup().signuppostfunction(
-        context,
-        Signupmodel(
-          email: emailController.text.trim(),
-          firstName: firstNameController.text.trim(),
-          role: roleController.text.trim(),
-          password: passwordController.text.trim(),
-        ));
+  void signupfunction(context) {
+    Apiservicesignup()
+        .signuppostfunction(
+            context,
+            Signupmodel(
+              email: emailController.text.trim(),
+              firstName: firstNameController.text.trim(),
+              role: roleController.text.trim(),
+              password: passwordController.text.trim(),
+            ))
+        .then(
+      (response) {
+        if (response == "success") {
+          Navigator.of(context).pushReplacement(
+            MaterialPageRoute(
+              builder: (ctx) => const Bottom_nav(),
+            ),
+          );
+        }
+      },
+    );
   }
 }

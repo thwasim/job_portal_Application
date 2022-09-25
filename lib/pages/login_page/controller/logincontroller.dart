@@ -1,11 +1,7 @@
-
-
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
-import 'package:second_project/pages/login_page/model/loginmodel.dart';
 import 'package:second_project/service/api/auth/login.dart';
+import '../../bottom_nav_bar/views/bottom_nav.dart';
+import '../model/loginmodel.dart';
 
 
 class Loginprovider with ChangeNotifier {
@@ -37,8 +33,8 @@ class Loginprovider with ChangeNotifier {
     return null;
   }
 
-  TextEditingController loginEmailController = TextEditingController(text: 'ronaldo@gmail.com');
-  TextEditingController loginPasswordController = TextEditingController(text: 'rono74100');
+  TextEditingController loginEmailController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
 
   loginfunction(BuildContext context) {
     Apiservicelogin().loginpostfunction(

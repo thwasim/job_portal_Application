@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:second_project/pages/profile/controller/profilecomtroller.dart';
+import 'package:second_project/service/user_services/user_services.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({Key? key}) : super(key: key);
@@ -64,16 +67,17 @@ class ProfileDetails extends StatelessWidget {
               ),
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('    your resume',
+                children: [
+                  const Text('    your resume',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
                           color: Colors.black)),
-                  Icon(
-                    Icons.image_search_sharp,
-                    color: Colors.black,
-                  ),
+                  IconButton(
+                      onPressed: () {
+                        context.read<ProfileController>().logout(context);
+                      },
+                      icon: const Icon(Icons.image_search_rounded))
                 ],
               ),
             ],

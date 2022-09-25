@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -16,17 +15,22 @@ class Apiservicelogin {
             "Content-Type": "application/json",
           }));
       if (response.statusCode! >= 200 || response.statusCode! <= 299) {
-       UserServices().setUserData(response.data["token"]["access"]);
-       return "success";
+        UserServices().setUserData(response.data["token"]["access"]);
+        return "success";
       } else {
         log('error');
       }
     } on DioError catch (e) {
-      final snackBar = SnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30))),
+        padding: const EdgeInsets.all(20),
         backgroundColor: Colors.red,
-        content: Text(e.response!.data.toString()),
-      );
-      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+        content: Text(
+          e.response!.data.toString(),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ));
       if (e.error.toString().contains('SocketException')) {
         log("Connection refused !");
         return;

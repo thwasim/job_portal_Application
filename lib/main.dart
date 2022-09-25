@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:second_project/pages/profile/controller/profilecomtroller.dart';
 import 'package:second_project/pages/splah_screen/views/splash_screen.dart';
 import 'package:second_project/pages/SignUp/controller/signpageprovider.dart';
 import 'package:second_project/pages/application/controller/applicationprovider.dart';
@@ -20,6 +21,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => Signupprovider()),
         ChangeNotifierProvider(create: (_) => Applicationsprovider()),
         ChangeNotifierProvider(create: (_) => ProfileEditProvider()),
+        ChangeNotifierProvider(create: (_) => ProfileController()),
       ],
       child: const MyApp(),
     ),
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false, 
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),

@@ -1,13 +1,13 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/SignUp/model/signupmodel.dart';
-import 'package:second_project/pages/bottom_nav_bar/views/bottom_nav.dart';
+import '../../../pages/SignUp/model/signupmodel.dart';
+import '../../user_services/user_services.dart';
 
 class Apiservicesignup {
   // **************************** signup ****************************//
 
-  signuppostfunction(context, Signupmodel obj) async {
+ Future signuppostfunction(context, Signupmodel obj) async {
     try {
       final response = await Dio().post(
         'http://10.0.2.2:8000/api/user/signup/',
@@ -18,16 +18,25 @@ class Apiservicesignup {
           },
         ),
       );
-
       if (response.statusCode! >= 200 || response.statusCode! <= 299) {
-        log(response.statusCode.toString());
-        Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (ctx) =>const Bottom_nav()));
+        log(response.data.toString());
+
+        UserServices().setUserData(response.data["tokens"]["access"]);
+        return "success";
       } else {
         log(response.data.toString());
       }
     } on DioError catch (e) {
-      log(e.response!.data.toString());
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(60))),
+        padding: const EdgeInsets.all(15),
+        backgroundColor: Colors.red,
+        content: Text(
+          e.response!.data.toString(),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ));
       if (e.error.toString().contains("SocketException")) {
         log("Connection refused !");
         return null;
