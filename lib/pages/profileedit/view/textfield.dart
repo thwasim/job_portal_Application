@@ -1,163 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/profileedit/model/cameragallery.dart';
 
-class Textfeild extends StatelessWidget {
-  const Textfeild({Key? key}) : super(key: key);
+class ProfileFields extends StatelessWidget {
+  const ProfileFields({
+    Key? key,
+    required this.hint,
+    this.validator,
+    this.controller,
+    this.textInputType,
+  }) : super(key: key);
+
+  final String hint;
+  final FormFieldValidator<String>? validator;
+  final TextEditingController? controller;
+  final TextInputType? textInputType;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          backgroundImage: const AssetImage("assets/pro.jpg"),
-          radius: 70,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(
-                      onPressed: () {
-                        CameraGallery.showBottom(context);
-                      },
-                      icon: const Icon(
-                        Icons.add_photo_alternate_rounded,
-                        color: Colors.black,
-                        size: 40,
-                      )),
-                ],
-              ),
-            ],
-          ),
-        ),
-       const SizedBox(height: 20,),
-        TextFormField(
-          maxLength: 40,
-          decoration: InputDecoration(
-            hintText: "Domain",
-            hintStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 22),
-            fillColor: const Color(0xffffffff),
-            filled: true,
-            contentPadding: const EdgeInsets.fromLTRB(20, 40, 20, 40),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        ),
-        TextFormField(
-          decoration: InputDecoration(
-            fillColor: const Color(0xffffffff),
-            filled: true,
-            hintText: "Location :",
-            hintStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 22),
-            contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
-       const SizedBox(height: 20,),
-        TextFormField(
-          decoration: InputDecoration(
-            hintText: "Number :",
-            hintStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 22),
-            fillColor: const Color(0xffffffff),
-            filled: true,
-            contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
-       const SizedBox(height: 20,),
-         TextFormField(
-          decoration: InputDecoration(
-            fillColor: const Color(0xffffffff),
-            filled: true,
-            hintText: "Year Of Experience :",
-            hintStyle: const TextStyle(fontWeight: FontWeight.bold,fontSize: 22),
-            contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
-          ),
-        ),
-        const Text(
-          'Education :',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-        InkWell(
-          onTap: () {
-            // context.read<ProfileEditProvider>().takeGallery();
-          },
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 3),
-                borderRadius: BorderRadius.circular(20),
-                color: Colors.white),
-            width: MediaQuery.of(context).size.width * 0.4,
-            height: MediaQuery.of(context).size.height * 0.08,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.023,
-                ),
-                const Icon(Icons.drive_folder_upload_outlined),
-              ],
-            ),
-          ),
-        ),
-        const Text(
-          'Add Resume',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-        ),
-        InkWell(
-          onTap: () {},
-          child: Container(
-            decoration: BoxDecoration(
-                border: Border.all(width: 3),
-                borderRadius: BorderRadius.circular(20),
-                color: const Color.fromARGB(255, 255, 255, 255)),
-            width: MediaQuery.of(context).size.width * 0.4,
-            height: MediaQuery.of(context).size.height * 0.08,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.025,
-                ),
-                const Icon(Icons.drive_folder_upload_outlined),
-              ],
-            ),
-          ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
-        ),
-        Material(
-          elevation: 9,
-          borderRadius: BorderRadius.circular(50),
-          color: const Color(0xffffffff),
-          child: MaterialButton(
-            padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-            minWidth: MediaQuery.of(context).size.width,
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text('submit',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold)),
-          ),
-        ),
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.02,
-        )
-      ],
+    return TextFormField(
+      validator: validator,
+      keyboardType: textInputType,
+      decoration: InputDecoration(
+        hintText: hint,
+        hintStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+        fillColor: const Color(0xffffffff),
+        filled: true,
+        contentPadding: const EdgeInsets.fromLTRB(20, 25, 20, 25),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)),
+      ),
     );
   }
 }

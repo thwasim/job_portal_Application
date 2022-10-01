@@ -7,7 +7,7 @@ class IconBox extends StatelessWidget {
       this.width = 65,
       this.radius = 20,
       this.icon,
-      this.iconColor = Colors.white})
+      this.iconColor = const Color(0xFFC5FAD5)})
       : super(key: key);
   final double height;
   final double width;

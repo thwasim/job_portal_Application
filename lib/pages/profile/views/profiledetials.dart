@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/profile/controller/profilecomtroller.dart';
-import 'package:second_project/service/user_services/user_services.dart';
 
 class ProfileDetails extends StatelessWidget {
   const ProfileDetails({Key? key}) : super(key: key);
@@ -76,6 +75,7 @@ class ProfileDetails extends StatelessWidget {
                   IconButton(
                       onPressed: () {
                         context.read<ProfileController>().logout(context);
+                        // Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>const HomePage()));
                       },
                       icon: const Icon(Icons.image_search_rounded))
                 ],

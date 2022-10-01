@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:provider/provider.dart';
-import 'package:second_project/pages/application/model/application_model.dart';
 import 'package:second_project/pages/application/controller/applicationprovider.dart';
+import 'package:second_project/pages/application/views/applicationschat.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
@@ -11,9 +11,9 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 236, 210, 134),
+        backgroundColor: const Color(0xFFC5FAD5),
       ),
-      backgroundColor: const Color.fromARGB(255, 236, 210, 134),
+      backgroundColor: const Color(0xFFC5FAD5),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -24,7 +24,7 @@ class Application extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: const Color(0xFFFFFFD2),
                         border: Border.all(),
                         borderRadius: BorderRadius.circular(40)),
                     height: MediaQuery.of(context).size.height * 0.23,
@@ -107,6 +107,7 @@ class Application extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width * 0.5,
       decoration: BoxDecoration(
+        color: const Color(0xFFC5FAD5),
         border: Border.all(),
         borderRadius: BorderRadius.circular(10),
       ),

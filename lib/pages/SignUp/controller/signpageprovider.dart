@@ -4,6 +4,10 @@ import '../../bottom_nav_bar/views/bottom_nav.dart';
 import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {
+
+  final formKeys = GlobalKey<FormState>();
+
+
   String? username(value) {
     RegExp regex = RegExp(r'^.{3,}$');
     if (value!.isEmpty) {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:second_project/pages/descreption/view/descreptionfunction.dart';
 
 class JobDetails extends StatelessWidget {
   const JobDetails({Key? key}) : super(key: key);
@@ -23,10 +22,12 @@ class JobDetails extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 60,
-              child: IconButton(onPressed: (){
-                Navigator.of(context).pop();
-              }, icon:const Icon(Icons.arrow_back_ios))),
+                top: 60,
+                child: IconButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    icon: const Icon(Icons.arrow_back_ios))),
             Positioned(
               top: 80.0,
               left: 100.0,
@@ -36,7 +37,7 @@ class JobDetails extends StatelessWidget {
                   ClipRRect(
                     child: Image.asset(
                       "assets/google.png",
-                      width: MediaQuery.of(context).size.height*0.1,
+                      width: MediaQuery.of(context).size.height * 0.1,
                     ),
                   ),
                   const Text(
@@ -68,12 +69,41 @@ class JobDetails extends StatelessWidget {
                     thickness: 3,
                     color: Colors.black,
                   ),
-                  SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      children: buildRequirements(),
-                    ),
-                  ),
+                  ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      itemCount: 4,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                          margin: const EdgeInsets.symmetric(vertical: 8),
+                          child: Row(
+                            children: [
+                              Container(
+                                width: 6,
+                                height: 6,
+                                decoration: const BoxDecoration(
+                                  color: Colors.black,
+                                  shape: BoxShape.circle,
+                                ),
+                              ),
+                              const SizedBox(
+                                width: 16,
+                              ),
+                              const Flexible(
+                                child: Text(
+                                  "requirement",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
                 ],
               ),
             ),
@@ -86,31 +116,21 @@ class JobDetails extends StatelessWidget {
                   
                 },
                 child: Container(
-                  width: 150.0,
-                  height: 55.0,
-                  padding: const EdgeInsets.only(left: 40.0),
+                  width: MediaQuery.of(context).size.width*0.1,
+                  height: MediaQuery.of(context).size.height*0.07,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50.0),
                     color: Theme.of(context).colorScheme.secondary,
                   ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children:const  [
-                      Text(
-                        "APPLY",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.0,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  child:const Center(
+                    child:  Text(
+                      "APPLY",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
                       ),
-                      // SizedBox(width: MediaQuery.of(context).size.width*0.16),
-                    //  const Icon(
-                    //     Icons.keyboard_arrow_right,
-                    //     color: Colors.white,
-                    //     size: 28.0,
-                    //   ),
-                    ],
+                    ),
                   ),
                 ),
               ),
@@ -120,43 +140,4 @@ class JobDetails extends StatelessWidget {
       ),
     );
   }
-}
-
-List<Widget> buildRequirements() {
-  List<Widget> list = [];
-  for (var i = 0; i < getJobsRequirements().length; i++) {
-    list.add(buildRequirement(getJobsRequirements()[i]));
-  }
-  return list;
-}
-
-Widget buildRequirement(String requirement) {
-  return Container(
-    margin: const EdgeInsets.symmetric(vertical: 8),
-    child: Row(
-      children: [
-        Container(
-          width: 4,
-          height: 4,
-          decoration: const BoxDecoration(
-            color: Colors.black,
-            shape: BoxShape.circle,
-          ),
-        ),
-        const SizedBox(
-          width: 16,
-        ),
-        Flexible(
-          child: Text(
-            requirement,
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
 }

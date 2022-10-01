@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../controller/splah_controller.dart';
 
@@ -22,8 +23,8 @@ class Screensplash extends StatelessWidget {
         )),
         child: Center(
           child: Container(
-            width: 150,
-            height: 150,
+            width: 150.w,
+            height: 150.h,
             decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(

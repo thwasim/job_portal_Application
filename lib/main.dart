@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/profile/controller/profilecomtroller.dart';
+import 'package:second_project/pages/profileedit/education/controller/educationcontroller.dart';
 import 'package:second_project/pages/splah_screen/views/splash_screen.dart';
 import 'package:second_project/pages/SignUp/controller/signpageprovider.dart';
 import 'package:second_project/pages/application/controller/applicationprovider.dart';
@@ -22,6 +24,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => Applicationsprovider()),
         ChangeNotifierProvider(create: (_) => ProfileEditProvider()),
         ChangeNotifierProvider(create: (_) => ProfileController()),
+        ChangeNotifierProvider(create: (_) => EducationLevelsController()),
       ],
       child: const MyApp(),
     ),
@@ -33,12 +36,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.red,
-      ),
-      home: const Screensplash(),
+    return ScreenUtilInit(
+      builder: ((context, widget) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primarySwatch: Colors.red,
+          ),
+          home: const Screensplash(),
+        );
+      }),
     );
   }
 }

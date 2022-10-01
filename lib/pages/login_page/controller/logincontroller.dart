@@ -3,7 +3,6 @@ import 'package:second_project/service/api/auth/login.dart';
 import '../../bottom_nav_bar/views/bottom_nav.dart';
 import '../model/loginmodel.dart';
 
-
 class Loginprovider with ChangeNotifier {
   bool visibility = false;
 
@@ -33,16 +32,20 @@ class Loginprovider with ChangeNotifier {
     return null;
   }
 
-  TextEditingController loginEmailController = TextEditingController();
-  TextEditingController loginPasswordController = TextEditingController();
+  TextEditingController loginEmailController = TextEditingController(text: "amal@gmail.com");
+  TextEditingController loginPasswordController = TextEditingController(text: "amal74100");
+  TextEditingController rolecontroller = TextEditingController();
 
   loginfunction(BuildContext context) {
-    Apiservicelogin().loginpostfunction(
+    Apiservicelogin()
+        .loginpostfunction(
       context,
       Loginmodel(
+          role: rolecontroller.text,
           email: loginEmailController.text.trim(),
           password: loginPasswordController.text.trim()),
-    ).then(
+    )
+        .then(
       (response) {
         if (response == "success") {
           Navigator.of(context).pushReplacement(

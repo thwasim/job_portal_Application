@@ -23,9 +23,9 @@ searchForJobs(Size size) {
           child: SizedBox(
             child: TextFormField(
               style: const TextStyle(color: Colors.black),
-              cursorColor: Colors.white,
               decoration: const InputDecoration(
-                  fillColor: Colors.white,
+                  fillColor:  Colors.white,
+                  filled: true,
                   hintText: 'Search for jobs',
                   hintStyle: TextStyle(color: Colors.black, fontSize: 17),
                   border: InputBorder.none),

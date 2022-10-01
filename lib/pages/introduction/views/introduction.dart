@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import '../controller/introdutioncontroller.dart';
 
@@ -25,7 +26,7 @@ class Introdutionscreen extends StatelessWidget {
                       children: [
                         SizedBox(
                             width: double.infinity,
-                            height: 500,
+                            height: 400.h,
                             child: Image.asset(
                               context
                                   .watch<Introductionprovider>()
@@ -38,18 +39,18 @@ class Introdutionscreen extends StatelessWidget {
                               .watch<Introductionprovider>()
                               .introdutionscreen[index]
                               .title,
-                          style: const TextStyle(
-                              fontSize: 50, fontWeight: FontWeight.w900),
+                          style: TextStyle(
+                              fontSize: 45.sp, fontWeight: FontWeight.w900),
                         ),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: 20.h,
                         ),
                         Text(
                           context
                               .watch<Introductionprovider>()
                               .introdutionscreen[index]
                               .descreiption,
-                          style: const TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 18.sp),
                         ),
                       ],
                     );
@@ -68,9 +69,9 @@ class Introdutionscreen extends StatelessWidget {
                       .introdutionscreen
                       .length,
                   (index) => Container(
-                    margin: const EdgeInsets.all(4),
-                    width: 15,
-                    height: 15,
+                    margin: EdgeInsets.all(3.r),
+                    width: 16.w,
+                    height: 16.h,
                     decoration: BoxDecoration(
                         color: value.selectedpageindex == index
                             ? Colors.cyan

@@ -1,10 +1,12 @@
+import 'dart:convert';
+import 'package:second_project/pages/login_page/model/loginmodel.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class UserServices {
-  Future<bool> setUserData(String token) async {
+  Future<bool> setUserData(json) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      return prefs.setString('token', token);
+      return prefs.setString('user', jsonEncode(json));
     } catch (e) {
       return false;
     }
@@ -13,7 +15,7 @@ class UserServices {
   Future<bool> removeUserData() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      return await prefs.remove('token');
+      return await prefs.remove('user');
     } catch (e) {
       return false;
     }
@@ -22,11 +24,12 @@ class UserServices {
   Future<dynamic> getUserData() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final res = prefs.getString('token');
-      return res == null ? false : res.toString();
+      final res = prefs.getString('user');
+      return res != null
+          ? Loginmodel.fromJson(jsonDecode(res.toString()))
+          : false;
     } catch (e) {
       return false;
     }
   }
 }
-

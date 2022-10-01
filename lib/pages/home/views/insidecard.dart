@@ -14,7 +14,7 @@ class Cardinside extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
                 radius: 30,
-                backgroundColor: Colors.white,
+                backgroundColor:const  Color(0xFFFFFFD2),
                 child: Image.asset('assets/google.png'),
               ),
             ),
@@ -70,7 +70,7 @@ class Cardinside extends StatelessWidget {
                       color: Colors.black)),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.white,
+                  primary:const Color(0xFFC5FAD5),
                 ),
                 onPressed: () {
                   Navigator.of(context).push(

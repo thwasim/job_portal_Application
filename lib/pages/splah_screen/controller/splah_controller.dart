@@ -10,9 +10,9 @@ class Splahprovider with ChangeNotifier {
         Future.delayed(const Duration(seconds: 3)).whenComplete(
           () => Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (context) => value is String
-                  ? const Bottom_nav()
-                  : const Introdutionscreen(),
+              builder: (context) => value is bool
+                  ? const Introdutionscreen()
+                  : const Bottom_nav(),
             ),
           ),
         );

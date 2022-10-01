@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/SignUp/views/signup_screen.dart';
 import 'package:second_project/pages/login_page/views/field.dart';
@@ -21,11 +22,12 @@ class SignInscreen extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    height: 70.h,
                   ),
-                  const Text(
+                  Text(
                     'LOGIN ACCOUNT',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.w800),
+                    style:
+                        TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w800),
                   ),
                   Image.asset('assets/computers.jpg'),
                   Signupfield(
@@ -35,7 +37,7 @@ class SignInscreen extends StatelessWidget {
                     icon: const Icon(Icons.email),
                     validator: (value) => val.email(value),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10.h),
                   Signupfield(
                     obscure: val.visibility,
                     icons: IconButton(
@@ -53,53 +55,57 @@ class SignInscreen extends StatelessWidget {
                   ),
                   SizedBox(height: MediaQuery.of(context).size.height * 0.02),
                   Padding(
-                    padding: const EdgeInsets.all(10.0),
+                    padding: EdgeInsets.all(10.0.r),
                     child: Material(
                       elevation: 5,
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(30.r),
                       color: const Color.fromARGB(255, 202, 227, 254),
                       child: MaterialButton(
                         padding: const EdgeInsets.fromLTRB(30, 15, 30, 15),
                         minWidth: MediaQuery.of(context).size.width * 0.8,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
-                            context.read<Loginprovider>().loginfunction(context);
+                            context
+                                .read<Loginprovider>()
+                                .loginfunction(context);
                           }
                         },
-                        child: const Text('Login',
+                        child: Text('Login',
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 20,
+                                fontSize: 20.sp,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold)),
                       ),
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Or',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
+                    style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 17.sp),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(right: 20, left: 40),
+                    padding: EdgeInsets.only(right: 20.r, left: 40.r),
                     child: Material(
                       elevation: 5,
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50.r),
                       child: MaterialButton(
-                          padding: const EdgeInsets.fromLTRB(10, 11, 10, 10),
-                          onPressed: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.transparent,
-                                child: Image.asset('assets/google.png'),
-                              ),
-                              const Text(
-                                'Login With Google',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              )
-                            ],
-                          )),
+                        padding: EdgeInsets.fromLTRB(10.r, 11.r, 10.r, 10.r),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Colors.transparent,
+                              child: Image.asset('assets/google.png'),
+                            ),
+                            const Text(
+                              'Login With Google',
+                              style: TextStyle(fontWeight: FontWeight.bold),
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -107,21 +113,24 @@ class SignInscreen extends StatelessWidget {
                   ),
                   RichText(
                     text: TextSpan(
-                        text: 'Don\'t have an account?',
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 18),
-                        children: <TextSpan>[
-                          TextSpan(
-                              text: ' Sign up',
-                              style: const TextStyle(
-                                  color: Colors.blueAccent, fontSize: 18),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.of(context).pushReplacement(
-                                      MaterialPageRoute(
-                                          builder: (ctx) => SignUpScreen()));
-                                })
-                        ]),
+                      text: 'Don\'t have an account?',
+                      style: const TextStyle(color: Colors.black, fontSize: 18),
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: ' Sign up',
+                          style: TextStyle(
+                              color: Colors.blueAccent, fontSize: 18.sp),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (ctx) => const SignUpScreen(),
+                                ),
+                              );
+                            },
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.height * 0.03,
