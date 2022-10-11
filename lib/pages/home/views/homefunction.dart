@@ -1,21 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:second_project/pages/home/views/icon_box.dart';
 
 searchForJobs(Size size) {
   return Container(
     width: size.width,
-    height: 65,
+    height: 62.h,
     decoration: BoxDecoration(
       color: Colors.white,
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(15.r),
     ),
     child: Row(
       children: [
         IconButton(
-          padding: const EdgeInsets.only(left: 20, right: 20),
+          padding: EdgeInsets.only(left: 20.r, right: 20.r),
           color: Colors.black,
-          iconSize: 28,
+          iconSize: 28.sp,
           icon: const Icon(CupertinoIcons.search),
           onPressed: () {},
         ),
@@ -32,9 +33,9 @@ searchForJobs(Size size) {
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(right: 10),
-          child: IconBox(width: 55, height: 50, icon: Icons.line_style_rounded),
+         Padding(
+          padding: EdgeInsets.only(right: 10.r),
+          child: IconBox(width: 52.w, height: 47.h, icon: Icons.line_style_rounded),
         ),
       ],
     ),

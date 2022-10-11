@@ -12,7 +12,7 @@ class Splahprovider with ChangeNotifier {
             MaterialPageRoute(
               builder: (context) => value is bool
                   ? const Introdutionscreen()
-                  : const Bottom_nav(),
+                  : const BottomNavBar(),
             ),
           ),
         );

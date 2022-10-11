@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:second_project/pages/profile/controller/profilecomtroller.dart';
 
@@ -9,10 +10,10 @@ class ProfileDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Text(
+         Text(
           'Education and Experience',
           style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
+              fontSize: 17.sp, fontWeight: FontWeight.bold, color: Colors.black),
         ),
         Center(
           child: Container(
@@ -27,11 +28,11 @@ class ProfileDetails extends StatelessWidget {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.022,
                 ),
-                const Text(
+                 Text(
                   'Upload File',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 17.sp,
                   ),
                 ),
                 const Icon(Icons.image_search_sharp),
@@ -46,7 +47,7 @@ class ProfileDetails extends StatelessWidget {
           width: MediaQuery.of(context).size.width * 0.9,
           height: MediaQuery.of(context).size.height * 0.14,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               color: Colors.white,
               border: Border.all()),
           child: Row(
@@ -67,10 +68,10 @@ class ProfileDetails extends StatelessWidget {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('    your resume',
+                   Text('    your resume',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 20,
+                          fontSize: 17.sp,
                           color: Colors.black)),
                   IconButton(
                       onPressed: () {

@@ -9,6 +9,8 @@ import '../controller/logincontroller.dart';
 class SignInscreen extends StatelessWidget {
   SignInscreen({Key? key}) : super(key: key);
 
+ bool buttonPressed = false;
+
   final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -65,6 +67,7 @@ class SignInscreen extends StatelessWidget {
                         minWidth: MediaQuery.of(context).size.width * 0.8,
                         onPressed: () {
                           if (formKey.currentState!.validate()) {
+                            buttonPressed = true;
                             context
                                 .read<Loginprovider>()
                                 .loginfunction(context);

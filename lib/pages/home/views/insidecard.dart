@@ -1,88 +1,51 @@
 import 'package:flutter/material.dart';
-import '../../descreption/view/descreption.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Cardinside extends StatelessWidget {
   const Cardinside({Key? key}) : super(key: key);
-  
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(
+          height: 10.h,
+        ),
         Row(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
-                radius: 30,
-                backgroundColor:const  Color(0xFFFFFFD2),
+                radius: 27.r,
+                backgroundColor: const Color(0xFFFFFFD2),
                 child: Image.asset('assets/google.png'),
               ),
             ),
-            const Text(
+            Text(
               '   Flutter Developer',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.13,
-            ),
-            const Text(
-              '2 days',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
             ),
           ],
         ),
-        const Padding(
-          padding: EdgeInsets.only(left: 18, right: 18),
-          child: Divider(
-            thickness: 3,
-            color: Colors.black,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              const Text('Min. Experience',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  )),
-              SizedBox(
-                width: MediaQuery.of(context).size.width * 0.28,
-              ),
-              const Text('9 - 10 lack',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  )),
-            ],
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(right: 35, left: 35),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              const Text('1 year',
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black)),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary:const Color(0xFFC5FAD5),
-                ),
-                onPressed: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (ctx) => const JobDetails()));
-                },
-                child: Text(
-                  'details'.toUpperCase(),
-                  style: const TextStyle(color: Colors.black),
-                ),
-              )
-            ],
-          ),
+        Row(
+          children: [
+            SizedBox(
+              width: 85.w,
+            ),
+            Text('Company Name',
+                style: TextStyle(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.bold,
+                )),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.15,
+            ),
+            Text('9 - 10 lack',
+                style: TextStyle(
+                  fontSize: 15.sp,
+                  fontWeight: FontWeight.bold,
+                )),
+          ],
         ),
       ],
     );

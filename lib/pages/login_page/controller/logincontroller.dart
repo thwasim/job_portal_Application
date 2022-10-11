@@ -32,8 +32,8 @@ class Loginprovider with ChangeNotifier {
     return null;
   }
 
-  TextEditingController loginEmailController = TextEditingController(text: "amal@gmail.com");
-  TextEditingController loginPasswordController = TextEditingController(text: "amal74100");
+  TextEditingController loginEmailController = TextEditingController();
+  TextEditingController loginPasswordController = TextEditingController();
   TextEditingController rolecontroller = TextEditingController();
 
   loginfunction(BuildContext context) {
@@ -49,7 +49,7 @@ class Loginprovider with ChangeNotifier {
       (response) {
         if (response == "success") {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (ctx) => const Bottom_nav()));
+              MaterialPageRoute(builder: (ctx) => const BottomNavBar()));
         }
       },
     );

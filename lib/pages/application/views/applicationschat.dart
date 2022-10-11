@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CallAndChat extends StatelessWidget {
   const CallAndChat({Key? key, required this.name, required this.icon})
@@ -19,11 +20,7 @@ class CallAndChat extends StatelessWidget {
             decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 154, 212, 201),
                 border: Border.all(),
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(20),
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                    bottomRight: Radius.circular(20))),
+                borderRadius:  BorderRadius.all(Radius.circular(20.r))),
             child: Row(
               children: [
                 icon,

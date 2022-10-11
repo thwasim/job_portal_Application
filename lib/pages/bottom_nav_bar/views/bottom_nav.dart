@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:second_project/pages/bottom_nav_bar/controller/botton_nav_controller.dart';
 
 // ignore: camel_case_types
-class Bottom_nav extends StatelessWidget {
-  const Bottom_nav({Key? key}) : super(key: key);
+class BottomNavBar extends StatelessWidget {
+  const BottomNavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

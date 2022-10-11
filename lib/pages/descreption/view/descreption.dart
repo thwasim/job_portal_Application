@@ -14,7 +14,14 @@ class JobDetails extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.88,
               width: MediaQuery.of(context).size.width,
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 239, 206, 108),
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  colors: [
+                    Color(0xFFE2D1F9),
+                    Color(0xFF317773),
+                  ],
+                ),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50.0),
                   bottomRight: Radius.circular(50.0),
@@ -112,18 +119,16 @@ class JobDetails extends StatelessWidget {
               left: 100.0,
               right: 100.0,
               child: GestureDetector(
-                onTap: () {
-                  
-                },
+                onTap: () {},
                 child: Container(
-                  width: MediaQuery.of(context).size.width*0.1,
-                  height: MediaQuery.of(context).size.height*0.07,
+                  width: MediaQuery.of(context).size.width * 0.1,
+                  height: MediaQuery.of(context).size.height * 0.07,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50.0),
-                    color: Theme.of(context).colorScheme.secondary,
+                    color:Colors.black,
                   ),
-                  child:const Center(
-                    child:  Text(
+                  child: const Center(
+                    child: Text(
                       "APPLY",
                       style: TextStyle(
                         color: Colors.white,

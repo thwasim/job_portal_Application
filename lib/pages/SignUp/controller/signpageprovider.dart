@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:second_project/pages/login_page/views/login_page.dart';
 import '../../../service/api/auth/signup.dart';
-import '../../bottom_nav_bar/views/bottom_nav.dart';
 import '../model/signupmodel.dart';
 
 class Signupprovider with ChangeNotifier {
@@ -74,7 +74,7 @@ class Signupprovider with ChangeNotifier {
         if (response == "success") {
           Navigator.of(context).pushReplacement(
             MaterialPageRoute(
-              builder: (ctx) => const Bottom_nav(),
+              builder: (ctx) => SignInscreen(),
             ),
           );
         }

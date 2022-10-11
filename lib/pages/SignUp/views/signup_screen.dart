@@ -91,9 +91,7 @@ class SignUpScreen extends StatelessWidget {
                           minWidth: MediaQuery.of(context).size.width,
                           onPressed: () {
                             if (context
-                                .read<Signupprovider>()
-                                .formKeys
-                                .currentState!
+                                .read<Signupprovider>().formKeys.currentState!
                                 .validate()) {
                               Provider.of<Signupprovider>(context,
                                       listen: false)

@@ -5,20 +5,17 @@ import 'package:second_project/pages/notification/views/nofication.dart';
 import 'package:second_project/pages/profile/views/profile.dart';
 
 class Bottomprovider with ChangeNotifier {
+  int selectedIndex = 0;
 
-   int selectedIndex = 0;
-
-  indexupdate(index){
+  indexupdate(index) {
     selectedIndex = index;
     notifyListeners();
   }
 
   List<Widget> tabItems = [
-   const HomePage(),
-   const Application(),
-   const Notifications(),
-   const Profile(),
+    const HomePage(),
+    const Application(),
+    const Notifications(),
+    const ProfileScreen(),
   ];
-
-
 }

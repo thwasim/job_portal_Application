@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import '../controller/profileeditcontroller.dart';
@@ -10,11 +11,11 @@ class CameraGallery {
       context: context,
       builder: (ctx) {
         return Padding(
-          padding: const EdgeInsets.all(30.0),
+          padding:  EdgeInsets.all(30.0.r),
           child: Container(
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(70)),
-              color: Color(0xFFFAD0C9),
+            decoration:  BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(70.r)),
+              color:const Color(0xFFFAD0C9),
             ),
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.16,
@@ -23,15 +24,15 @@ class CameraGallery {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.01,
                 ),
-                const Text(
+                 Text(
                   'Choice Profile Photo',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 35, right: 35),
+                  padding: EdgeInsets.only(left: 35.r, right: 35.r),
                   child: Row(
                     children: [
                       TextButton.icon(
@@ -44,8 +45,8 @@ class CameraGallery {
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
-                      const SizedBox(
-                        width: 70),
+                       SizedBox(
+                        width: 40.r),
                       TextButton.icon(
                         onPressed: () {
                           context.read<ProfileEditProvider>().pickImageBoth(ImageSource.gallery);
