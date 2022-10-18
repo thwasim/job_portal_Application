@@ -24,7 +24,7 @@ void main() {
         ChangeNotifierProvider(create: (_) => Applicationsprovider()),
         ChangeNotifierProvider(create: (_) => ProfileEditProvider()),
         ChangeNotifierProvider(create: (_) => ProfileController()),
-        ChangeNotifierProvider(create: (_) => EducationLevelsController()),
+        ChangeNotifierProvider(create: (_) => EducationDetalisProvider()),
       ],
       child: const MyApp(),
     ),

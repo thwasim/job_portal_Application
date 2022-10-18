@@ -14,5 +14,3 @@ class Profilemodel {
       this.uid,
       this.dateofbrith});
 }
-
-

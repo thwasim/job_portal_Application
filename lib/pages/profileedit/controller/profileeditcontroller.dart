@@ -94,9 +94,5 @@ class ProfileEditProvider with ChangeNotifier {
           number: numbercontroller.text,
           dateofbrith: dateofbrithcontroller.text),
     );
-    log(value.toString());
-    log(imagefile!.path.toString());
-    log(numbercontroller.text);
-    log(dateofbrithcontroller.text);
   }
 }

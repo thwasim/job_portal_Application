@@ -15,46 +15,47 @@ class Introdutionscreen extends StatelessWidget {
           Consumer<Introductionprovider>(
             builder: (context, value, child) {
               return PageView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  controller: value.pagecontroller,
-                  onPageChanged: (int index) {
-                    value.updateIndex(index);
-                  },
-                  itemCount: value.introdutionscreen.length,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        SizedBox(
-                            width: double.infinity,
-                            height: 400.h,
-                            child: Image.asset(
-                              context
-                                  .watch<Introductionprovider>()
-                                  .introdutionscreen[index]
-                                  .imageAssets,
-                              fit: BoxFit.contain,
-                            )),
-                        Text(
-                          context
-                              .watch<Introductionprovider>()
-                              .introdutionscreen[index]
-                              .title,
-                          style: TextStyle(
-                              fontSize: 45.sp, fontWeight: FontWeight.w900),
-                        ),
-                         SizedBox(
-                          height: 20.h,
-                        ),
-                        Text(
-                          context
-                              .watch<Introductionprovider>()
-                              .introdutionscreen[index]
-                              .descreiption,
-                          style: TextStyle(fontSize: 18.sp),
-                        ),
-                      ],
-                    );
-                  });
+                physics: const BouncingScrollPhysics(),
+                controller: value.pagecontroller,
+                onPageChanged: (int index) {
+                  value.updateIndex(index);
+                },
+                itemCount: value.introdutionscreen.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      SizedBox(
+                          width: double.infinity,
+                          height: 400.h,
+                          child: Image.asset(
+                            context
+                                .watch<Introductionprovider>()
+                                .introdutionscreen[index]
+                                .imageAssets,
+                            fit: BoxFit.contain,
+                          )),
+                      Text(
+                        context
+                            .watch<Introductionprovider>()
+                            .introdutionscreen[index]
+                            .title,
+                        style: TextStyle(
+                            fontSize: 45.sp, fontWeight: FontWeight.w900),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Text(
+                        context
+                            .watch<Introductionprovider>()
+                            .introdutionscreen[index]
+                            .descreiption,
+                        style: TextStyle(fontSize: 18.sp),
+                      ),
+                    ],
+                  );
+                },
+              );
             },
           ),
           Positioned(
@@ -92,7 +93,7 @@ class Introdutionscreen extends StatelessWidget {
               child: Text(
                 context.watch<Introductionprovider>().islastpage
                     ? 'Start'
-                    : 'Next', 
+                    : 'Next',
                 style: const TextStyle(color: Colors.cyan),
               ),
             ),

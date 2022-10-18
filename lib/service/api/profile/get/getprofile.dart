@@ -1,6 +1,5 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:second_project/pages/profile/model/profilemodel.dart';
 import 'package:second_project/service/user_services/user_services.dart';
 
